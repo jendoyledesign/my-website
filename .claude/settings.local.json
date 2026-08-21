@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -sL \"https://images.squarespace-cdn.com/content/v1/6a569ed72a246a50fdf85ed7/f5876823-c6cd-4ad9-a388-b7699180cec1/jen-doyle-profile.jpg\" -o \"/Users/jdoyle/Claude/My Website/public/jen-doyle-profile.jpg\")",
+      "Bash(curl -L \"https://images.squarespace-cdn.com/content/v1/6a569ed72a246a50fdf85ed7/f5876823-c6cd-4ad9-a388-b7699180cec1/jen-doyle-profile.jpg\" -o \"/Users/jdoyle/Claude/My Website/public/jen-doyle-profile.jpg\")",
+      "Bash(grep -v '^--$')",
+      "Bash(find /private/tmp/claude-502 -name \"*.jpg\" -o -name \"*.png\" -o -name \"*.jpeg\" -o -name \"*.webp\" 2>/dev/null | head -20)",
+      "Bash(find ~/Downloads ~/Desktop /private/tmp -maxdepth 3 \\\\\\( -name \"*.jpg\" -o -name \"*.png\" -o -name \"*.jpeg\" -o -name \"*.webp\" \\\\\\) -newer \"/Users/jdoyle/Claude/My Website/public/jen-doyle-profile.jpg\" 2>/dev/null | head -20)",
+      "WebFetch(domain:www.jendoyle.com)"
+    ]
+  }
+}

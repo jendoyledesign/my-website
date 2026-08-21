@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --foreground: #0a0a0a;
+    --background: #faf9f7;
+    --muted: #0a0a0a;
+    --border: #e7e5e4;
+    --subtle: #f5f4f2;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    color: var(--foreground);
+    background: var(--background);
+    font-family: var(--font-gt-walsheim), sans-serif;
+  }
+
+  /* Nice underline animation for links */
+  .hover-underline {
+    position: relative;
+    text-decoration: none;
+  }
+
+  .hover-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 0;
+    height: 1px;
+    background: currentColor;
+    transition: width 0.25s ease;
+  }
+
+  .hover-underline:hover::after {
+    width: 100%;
+  }
+}
