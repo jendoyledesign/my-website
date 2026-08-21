@@ -6,7 +6,9 @@
       "Bash(grep -v '^--$')",
       "Bash(find /private/tmp/claude-502 -name \"*.jpg\" -o -name \"*.png\" -o -name \"*.jpeg\" -o -name \"*.webp\" 2>/dev/null | head -20)",
       "Bash(find ~/Downloads ~/Desktop /private/tmp -maxdepth 3 \\\\\\( -name \"*.jpg\" -o -name \"*.png\" -o -name \"*.jpeg\" -o -name \"*.webp\" \\\\\\) -newer \"/Users/jdoyle/Claude/My Website/public/jen-doyle-profile.jpg\" 2>/dev/null | head -20)",
-      "WebFetch(domain:www.jendoyle.com)"
+      "WebFetch(domain:www.jendoyle.com)",
+      "Bash(git add *)",
+      "Bash(git commit -m 'Update homepage, about page, and project content *)"
     ]
   }
 }

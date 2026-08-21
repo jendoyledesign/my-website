@@ -27,21 +27,39 @@ export default function AboutPage() {
         <div className="flex-1 px-8 md:px-12 xl:px-20 py-16 md:py-24 flex flex-col justify-center">
           <div className="space-y-5 max-w-[650px]">
             <p className="text-lg leading-relaxed">
-              Jen Doyle is a Brooklyn-based designer with over ten years of
-              experience. She earned a BFA in Graphic Design from MICA and is
-              currently at{" "}
+              Jen Doyle is a Brooklyn-based product designer with over ten
+              years of experience. She earned a BFA in Graphic Design from MICA
+              and is currently at{" "}
               <a
                 href="https://hugeinc.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover-underline"
+                className="underline underline-offset-4"
               >
                 Huge
               </a>
               , designing for a variety of clients. She blends her passion for
               user-centric experiences with design systems thinking and new
               technologies to develop thoughtful digital experiences.
-              Previously, she worked at ISL, Illustria, and Exit10.
+              Previously, she worked at{" "}
+              <a
+                href="https://isl.co"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-4"
+              >
+                ISL
+              </a>{" "}
+              and{" "}
+              <a
+                href="https://exit10.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-4"
+              >
+                Exit10
+              </a>
+              .
             </p>
             <p className="text-lg leading-relaxed text-[var(--muted)]">
               Let&apos;s work together:{" "}
