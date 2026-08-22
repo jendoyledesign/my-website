@@ -44,10 +44,10 @@ export const projects: Project[] = [
       { color: "#ccc8c2" },
     ],
     collaborators: [
-      { role: "Creative Director", name: "Marcus Webb" },
-      { role: "UX Lead", name: "Jen Doyle" },
-      { role: "UX Researcher", name: "Priya Nair" },
-      { role: "Product Designer", name: "Sam Torres" },
+      { role: "Creative Director", name: "Tom Kershaw" },
+      { role: "UX Lead", name: "Jose Ramirez" },
+      { role: "VD Lead", name: "George Schon" },
+      { role: "Senior Designer", name: "Jen Doyle" },
     ],
   },
   {
@@ -75,10 +75,10 @@ export const projects: Project[] = [
       { color: "#c5ccc8" },
     ],
     collaborators: [
-      { role: "Creative Director", name: "Laura Chen" },
-      { role: "Design Systems Lead", name: "Jen Doyle" },
-      { role: "Frontend Engineer", name: "Oliver Kim" },
-      { role: "UX Designer", name: "Mia Fontaine" },
+      { role: "Creative Director", name: "Kristin Agnarsdottir" },
+      { role: "UX Lead", name: "James Craig" },
+      { role: "VD Lead", name: "Russel Hinton" },
+      { role: "Senior Designer", name: "Jen Doyle" },
     ],
   },
   {
@@ -105,10 +105,9 @@ export const projects: Project[] = [
       { color: "#ccc5d0" },
     ],
     collaborators: [
-      { role: "Creative Director", name: "Rachel Moore" },
-      { role: "UX Lead", name: "Jen Doyle" },
-      { role: "Mobile Designer", name: "Diego Reyes" },
-      { role: "UX Researcher", name: "Anaya Singh" },
+      { role: "Creative Director", name: "Tom Kershaw" },
+      { role: "UX", name: "Darin Spicer & Joar Heiberg" },
+      { role: "VD", name: "Jen Doyle & Steph Corona" },
     ],
   },
   {
@@ -136,10 +135,9 @@ export const projects: Project[] = [
       { color: "#ccc9c4" },
     ],
     collaborators: [
-      { role: "Creative Director", name: "Tom Bradley" },
-      { role: "UX Lead", name: "Jen Doyle" },
-      { role: "Visual Designer", name: "Claire Nakamura" },
-      { role: "Conversion Strategist", name: "Alex Rubin" },
+      { role: "Creative Director", name: "Jessica Cunningham" },
+      { role: "UX", name: "Tracy Michael, Priyanka Saha, Mikalai Andreyanau" },
+      { role: "VD", name: "Keith Locke, Jen Doyle" },
     ],
   },
   {
@@ -165,11 +163,6 @@ export const projects: Project[] = [
       { color: "#ccd4d4" },
       { color: "#d4dcdc" },
       { color: "#bccacc" },
-    ],
-    collaborators: [
-      { role: "Creative Director", name: "Ben Walsh" },
-      { role: "Senior Visual Designer", name: "Jen Doyle" },
-      { role: "Frontend Developer", name: "Kai Jensen" },
     ],
     images: [
       "/1kx/1kx-logo.webp",
@@ -206,9 +199,9 @@ export const projects: Project[] = [
       { color: "#c8c0be" },
     ],
     collaborators: [
-      { role: "Art Director", name: "Jen Doyle" },
-      { role: "Print Designer", name: "Sofia Mendez" },
-      { role: "Copywriter", name: "James Park" },
+      { role: "Creative Director", name: "Campbell Kwaka, Fernando Castro" },
+      { role: "Sr Interactive Designer", name: "Dan Rader" },
+      { role: "Interactive Designer", name: "Jen Doyle" },
     ],
     images: [
       "/contrary-con/cc_14.jpg",
@@ -250,10 +243,11 @@ export const projects: Project[] = [
       { color: "#c8ccc4" },
     ],
     collaborators: [
-      { role: "Creative Director", name: "Nora Sullivan" },
-      { role: "Senior Product Designer", name: "Jen Doyle" },
-      { role: "Motion Designer", name: "Tyler Rhodes" },
-      { role: "UX Researcher", name: "Leila Hassan" },
+      { role: "Creative Director", name: "Rich Bloom, Nour Tabet" },
+      { role: "UX Lead", name: "Alex Safchuk" },
+      { role: "VD Lead", name: "Irina Moiseenko" },
+      { role: "Senior Designer", name: "Jen Doyle, Rene Arvizu" },
+      { role: "Designer", name: "Chris Sullivan" },
     ],
   },
   {
@@ -280,10 +274,9 @@ export const projects: Project[] = [
       { color: "#c4bcc0" },
     ],
     collaborators: [
-      { role: "Creative Director", name: "Dana Fox" },
-      { role: "Art Director", name: "Jen Doyle" },
-      { role: "Visual Designer", name: "Zoe Archer" },
-      { role: "Frontend Developer", name: "Chris Watts" },
+      { role: "Creative Director", name: "Nour Tabet" },
+      { role: "UX", name: "Jackie Littman" },
+      { role: "VD", name: "Jen Doyle" },
     ],
   },
   {

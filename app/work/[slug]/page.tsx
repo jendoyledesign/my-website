@@ -98,11 +98,11 @@ export default async function ProjectPage({ params }: Props) {
       <section className="max-w-[2100px] mx-auto px-8 md:px-12 xl:px-20 py-20 md:py-28">
         <div className="grid md:grid-cols-[240px_1fr] gap-10 md:gap-24">
           <div>
-            <p className="text-[10px] uppercase tracking-widest text-[var(--muted)] sticky top-20">
+            <p className="text-[14px] uppercase tracking-widest text-[var(--muted)] sticky top-20">
               Challenge
             </p>
           </div>
-          <p className="text-xl md:text-2xl leading-relaxed max-w-3xl">
+          <p className="text-[20px] leading-relaxed max-w-3xl">
             {project.challenge}
           </p>
         </div>
@@ -127,13 +127,13 @@ export default async function ProjectPage({ params }: Props) {
       <section className="max-w-[2100px] mx-auto px-8 md:px-12 xl:px-20 py-20 md:py-28">
         <div className="grid md:grid-cols-[240px_1fr] gap-10 md:gap-24">
           <div>
-            <p className="text-[10px] uppercase tracking-widest text-[var(--muted)] sticky top-20">
+            <p className="text-[14px] uppercase tracking-widest text-[var(--muted)] sticky top-20">
               Solution
             </p>
           </div>
           <div className="space-y-6 max-w-3xl">
             {project.solution.split("\n\n").map((para, i) => (
-              <p key={i} className="text-xl md:text-2xl leading-relaxed">
+              <p key={i} className="text-[20px] leading-relaxed">
                 {para}
               </p>
             ))}
@@ -238,13 +238,13 @@ export default async function ProjectPage({ params }: Props) {
         <section className="max-w-[2100px] mx-auto px-8 md:px-12 xl:px-20 py-20 md:py-28">
           <div className="grid md:grid-cols-[240px_1fr] gap-10 md:gap-24">
             <div>
-              <p className="text-[10px] uppercase tracking-widest text-[var(--muted)] sticky top-20">
+              <p className="text-[14px] uppercase tracking-widest text-[var(--muted)] sticky top-20">
                 Collaborators
               </p>
             </div>
             <div className="space-y-3">
               {project.collaborators.map(({ role, name }) => (
-                <p key={name} className="text-xl md:text-2xl leading-snug">
+                <p key={name} className="text-[16px] leading-snug">
                   <span className="text-[var(--muted)]">{role}:</span> {name}
                 </p>
               ))}
