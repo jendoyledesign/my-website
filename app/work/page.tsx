@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function WorkPage() {
   return (
-    <div className="max-w-[2100px] mx-auto px-8 md:px-12 xl:px-20 py-12 md:py-16">
+    <div className="max-w-[2100px] mx-auto px-8 md:px-12 xl:px-20 pt-28 pb-12 md:pb-16">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.map((project) => (
           <Link
@@ -38,13 +38,10 @@ export default function WorkPage() {
             </div>
 
             {/* Info */}
-            <div className="flex items-start justify-between gap-2">
+            <div>
               <h2 className="text-[16px] font-medium leading-snug group-hover:underline underline-offset-2">
                 {project.client}
               </h2>
-              <span className="text-[var(--muted)] text-[16px] mt-0.5 flex-shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">
-                ↗
-              </span>
             </div>
           </Link>
         ))}

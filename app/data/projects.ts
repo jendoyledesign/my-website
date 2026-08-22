@@ -8,6 +8,7 @@ export type Project = {
   color: string;
   image?: string; // optional thumbnail image (overrides color swatch)
   heroImage?: string; // optional full-bleed hero background image
+  heroVideo?: string; // optional full-bleed hero video (takes precedence over heroImage)
   heroTagline: string;
   outcomes: [string, string, string];
   challenge: string;
@@ -27,7 +28,6 @@ export const projects: Project[] = [
     services: ["UX Research", "Product Design", "Prototyping"],
     color: "#e8e4de",
     image: "/work/compass.jpg",
-    heroImage: "/compass/compass-hero.jpg",
     heroTagline: "From sign-up to aha moment — in half the time.",
     outcomes: [
       "40% reduction in time-to-value",
@@ -79,6 +79,7 @@ export const projects: Project[] = [
       { role: "UX Lead", name: "James Craig" },
       { role: "VD Lead", name: "Russel Hinton" },
       { role: "Senior Designer", name: "Jen Doyle" },
+      { role: "Motion Designer", name: "Carlos Eduardo Mejia Martinez" },
     ],
   },
   {
@@ -89,6 +90,7 @@ export const projects: Project[] = [
     industry: "Climate / Consumer",
     services: ["Product Strategy", "Mobile Design", "UX Research"],
     color: "#e4dde8",
+    image: "/work/outfront.jpg",
     heroTagline: "Making sustainability feel less like homework.",
     outcomes: [
       "0→1 product launch in 14 weeks",
@@ -182,7 +184,6 @@ export const projects: Project[] = [
     services: ["Event Branding", "Print Design", "Art Direction"],
     color: "#e8e0de",
     image: "/work/contrary-con.jpg",
-    heroImage: "/contrary-con/cc_6.webp",
     heroTagline: "Challenging participants to see the world through a different lens.",
     outcomes: [
       "Full event brand system designed and produced",
@@ -227,6 +228,7 @@ export const projects: Project[] = [
     industry: "Health & Wellness / Consumer",
     services: ["Mobile Design", "Product Design", "Prototyping"],
     color: "#e0e4dc",
+    image: "/work/brooks.jpg",
     heroTagline: "Building a daily habit that actually sticks.",
     outcomes: [
       "Day-7 retention: 61%",
@@ -258,6 +260,7 @@ export const projects: Project[] = [
     industry: "Creative Agency",
     services: ["Web Design", "Art Direction", "Branding"],
     color: "#e4dce0",
+    image: "/work/mms.jpg",
     heroTagline: "A portfolio that earns the work it shows.",
     outcomes: [
       "Inbound inquiries up 55%",
@@ -280,13 +283,14 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "orkin",
+    slug: "auberge-resorts",
     title: "Wayfinding system for a cultural institution",
-    client: "Orkin",
+    client: "Auberge Resorts",
     year: "2019",
     industry: "Cultural / Public",
     services: ["Wayfinding", "Graphic Design", "Environmental Design"],
     color: "#dde0e8",
+    image: "/work/auberge.jpg",
     heroTagline: "Helping visitors find the work — then lose themselves in it.",
     outcomes: [
       "Wayfinding complaints reduced by 78%",
@@ -319,4 +323,10 @@ export function getNextProject(slug: string): Project | undefined {
   const idx = projects.findIndex((p) => p.slug === slug);
   if (idx === -1) return undefined;
   return projects[(idx + 1) % projects.length];
+}
+
+export function getPreviousProject(slug: string): Project | undefined {
+  const idx = projects.findIndex((p) => p.slug === slug);
+  if (idx === -1) return undefined;
+  return projects[(idx - 1 + projects.length) % projects.length];
 }

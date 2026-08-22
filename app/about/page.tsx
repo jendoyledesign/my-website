@@ -19,12 +19,13 @@ const speaking = [
   "General Assembly — Web Design Portfolio Panel // 2016",
 ];
 
+
 export default function AboutPage() {
   return (
-    <div className="max-w-[2100px] mx-auto pt-14">
+    <div className="max-w-[2100px] mx-auto pt-28">
       <div className="flex flex-col md:flex-row min-h-[85vh]">
         {/* Left column — text */}
-        <div className="flex-1 px-8 md:px-12 xl:px-20 py-16 md:py-24 flex flex-col justify-center">
+        <div className="flex-1 px-8 md:px-12 xl:px-20 py-16 flex flex-col justify-center">
           <div className="space-y-5 max-w-[650px]">
             <p className="text-lg leading-relaxed">
               Jen Doyle is a Brooklyn-based product designer with over ten
@@ -39,16 +40,25 @@ export default function AboutPage() {
                 Huge
               </a>
               , designing for a variety of clients. She blends her passion for
-              user-centric experiences with design systems thinking and new
-              technologies to develop thoughtful digital experiences.
-              Previously, she worked at{" "}
+              beautiful interfaces with design systems thinking and new
+              technologies to develop thoughtful, human centered digital
+              experiences. Previously, she worked at{" "}
               <a
-                href="https://isl.co"
+                href="https://www.instagram.com/istrategylabs/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline underline-offset-4"
               >
                 ISL
+              </a>
+              ,{" "}
+              <a
+                href="https://www.instagram.com/illustria.co/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-4"
+              >
+                Illustria
               </a>{" "}
               and{" "}
               <a
@@ -70,7 +80,6 @@ export default function AboutPage() {
                 hello@jendoyle.com
               </a>
             </p>
-
           </div>
 
           <div className="mt-12 pt-12 border-t border-[var(--border)] space-y-10">
@@ -81,7 +90,7 @@ export default function AboutPage() {
               </h2>
               <ul className="space-y-3">
                 {recognitions.map((item) => (
-                  <li key={item} className="text-sm text-[var(--foreground)]">
+                  <li key={item} className="text-[16px] text-[var(--foreground)]">
                     {item}
                   </li>
                 ))}
@@ -95,7 +104,7 @@ export default function AboutPage() {
               </h2>
               <ul className="space-y-3">
                 {speaking.map((item) => (
-                  <li key={item} className="text-sm text-[var(--foreground)]">
+                  <li key={item} className="text-[16px] text-[var(--foreground)]">
                     {item}
                   </li>
                 ))}
@@ -105,7 +114,7 @@ export default function AboutPage() {
         </div>
 
         {/* Right column — photo */}
-        <div className="md:w-[55%] lg:w-[60%] flex-shrink-0 flex items-start justify-end p-8 md:pt-8 md:pr-12 md:pb-0 md:pl-0 xl:pr-20">
+        <div className="md:w-[55%] lg:w-[60%] flex-shrink-0 flex items-start justify-end p-8 md:pt-0 md:pr-12 md:pb-0 md:pl-0 xl:pr-20">
           <div className="relative w-full max-w-[700px] aspect-[3/4] md:aspect-auto md:h-[840px]">
             <Image
               src="/about/jen-doyle-profile.jpg"
@@ -115,8 +124,6 @@ export default function AboutPage() {
               className="object-cover object-top"
               priority
             />
-
-
           </div>
         </div>
       </div>
