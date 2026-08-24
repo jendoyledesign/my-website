@@ -20,6 +20,33 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+function isGif(src: string | undefined): boolean {
+  return src?.endsWith(".gif") ?? false;
+}
+
+function isVideo(src: string | undefined): boolean {
+  return !!(src && (src.endsWith(".mp4") || src.endsWith(".mov") || src.endsWith(".webm")));
+}
+
+function MediaItem({ src, className }: { src: string; className?: string }) {
+  if (isVideo(src)) {
+    return (
+      <video
+        src={src}
+        autoPlay
+        muted
+        loop
+        playsInline
+        className={className ?? "absolute inset-0 w-full h-full object-cover"}
+      />
+    );
+  }
+  return (
+    <Image src={src} alt="" fill className={className ?? "object-cover"}
+      unoptimized={isGif(src)} />
+  );
+}
+
 export default async function ProjectPage({ params }: Props) {
   const { slug } = await params;
   const project = getProject(slug);
@@ -27,6 +54,8 @@ export default async function ProjectPage({ params }: Props) {
 
   const next = getNextProject(slug);
   const prev = getPreviousProject(slug);
+
+  const imgs = project.images ?? [];
 
   return (
     <div>
@@ -39,7 +68,7 @@ export default async function ProjectPage({ params }: Props) {
 
       {/* ── Three-column description ──────────────────────────── */}
       <div className="max-w-[2100px] mx-auto px-8 md:px-12 xl:px-20 pb-20 md:pb-28 border-b border-[var(--border)]">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-10 md:gap-16">
           <div>
             <p className="text-[14px] uppercase tracking-widest text-gray-500 mb-4">Year</p>
             <p className="text-[18px]">{project.year}</p>
@@ -48,19 +77,18 @@ export default async function ProjectPage({ params }: Props) {
             <p className="text-[14px] uppercase tracking-widest text-gray-500 mb-4">Role</p>
             <p className="text-[18px]">{project.services.join(", ")}</p>
           </div>
-          <div>
+          <div className="col-span-2 md:col-span-1">
             <p className="text-[14px] uppercase tracking-widest text-gray-500 mb-4">Overview</p>
-            <p className="text-[18px] leading-relaxed">{project.challenge}</p>
+            <p className="text-[18px] leading-relaxed">{project.overview ?? project.challenge}</p>
           </div>
         </div>
       </div>
 
       {/* ── Image block 1 — single 16:9 ──────────────────────── */}
-      {project.images ? (
+      {imgs[0] ? (
         <div className="px-8 md:px-12 xl:px-20">
           <div className="relative w-full aspect-[16/9]">
-            <Image src={project.images[0]} alt="" fill className="object-cover"
-              unoptimized={project.images[0].endsWith(".gif")} />
+            <MediaItem src={imgs[0]} />
           </div>
         </div>
       ) : (
@@ -74,7 +102,7 @@ export default async function ProjectPage({ params }: Props) {
       <section className="max-w-[2100px] mx-auto px-8 md:px-12 xl:px-20 py-20 md:py-28">
         <div className="grid md:grid-cols-[240px_1fr] gap-10 md:gap-24">
           <div>
-            <p className="text-[14px] uppercase tracking-widest text-gray-500 sticky top-20">
+            <p className="text-[14px] uppercase tracking-widest text-gray-500">
               Challenge
             </p>
           </div>
@@ -84,30 +112,36 @@ export default async function ProjectPage({ params }: Props) {
         </div>
       </section>
 
-      {/* ── Image block 2 — two-up 1:1 ───────────────────────── */}
-      {project.images ? (
-        <div className="grid grid-cols-2 gap-4 px-8 md:px-12 xl:px-20">
-          {[project.images[1], project.images[2]].map((src, i) => (
-            <div key={i} className="relative w-full aspect-square">
-              <Image src={src} alt="" fill className="object-cover"
-                unoptimized={src.endsWith(".gif")} />
-            </div>
-          ))}
-        </div>
-      ) : (
-        <div className="grid grid-cols-2 gap-4 px-8 md:px-12 xl:px-20">
-          <div className="w-full aspect-square"
-            style={{ backgroundColor: project.blocks[1].color }} />
-          <div className="w-full aspect-square"
-            style={{ backgroundColor: project.blocks[2].color }} />
+      {/* ── Image block 2 — single 16:9 (only renders if image present) ── */}
+      {imgs[1] && (
+        <div className="px-8 md:px-12 xl:px-20">
+          <div className="relative w-full aspect-[16/9]">
+            <MediaItem src={imgs[1]} />
+          </div>
         </div>
       )}
+
+      {/* ── Image block 3 — two-up 1:1 (always renders, per-slot fallback) ── */}
+      <div className="grid grid-cols-2 gap-4 px-8 md:px-12 xl:px-20 mt-4">
+        <div className="relative w-full aspect-square">
+          {imgs[2]
+            ? <MediaItem src={imgs[2]} />
+            : <div className="absolute inset-0" style={{ backgroundColor: project.blocks[1].color }} />
+          }
+        </div>
+        <div className="relative w-full aspect-square">
+          {imgs[3]
+            ? <MediaItem src={imgs[3]} />
+            : <div className="absolute inset-0" style={{ backgroundColor: project.blocks[2].color }} />
+          }
+        </div>
+      </div>
 
       {/* ── Solution ─────────────────────────────────────────── */}
       <section className="max-w-[2100px] mx-auto px-8 md:px-12 xl:px-20 py-20 md:py-28">
         <div className="grid md:grid-cols-[240px_1fr] gap-10 md:gap-24">
           <div>
-            <p className="text-[14px] uppercase tracking-widest text-gray-500 sticky top-20">
+            <p className="text-[14px] uppercase tracking-widest text-gray-500">
               Solution
             </p>
           </div>
@@ -121,12 +155,11 @@ export default async function ProjectPage({ params }: Props) {
         </div>
       </section>
 
-      {/* ── Image block 3 — single 16:9 (above collaborators) ── */}
-      {project.images && project.images.length > 3 ? (
+      {/* ── Image block 4 — single 16:9 (above collaborators) ── */}
+      {imgs[4] ? (
         <div className="px-8 md:px-12 xl:px-20">
           <div className="relative w-full aspect-[16/9]">
-            <Image src={project.images[3]} alt="" fill className="object-cover"
-              unoptimized={project.images[3].endsWith(".gif")} />
+            <MediaItem src={imgs[4]} />
           </div>
         </div>
       ) : (
@@ -137,64 +170,65 @@ export default async function ProjectPage({ params }: Props) {
       )}
 
       {/* ── Extra image rows (for projects with extended gallery) */}
-      {project.images && project.images.length > 4 && (
+      {imgs.length > 5 && (
         <>
-          {/* Two-up 1:1 */}
-          {project.images.length > 5 && (
+          {/* Two-up 1:1 (per-slot fallback) */}
+          {(imgs[5] || imgs[6]) && (
             <div className="grid grid-cols-2 gap-4 px-8 md:px-12 xl:px-20 mt-4">
-              {[project.images[4], project.images[5]].map((src, i) => (
+              <div className="relative w-full aspect-square">
+                {imgs[5]
+                  ? <MediaItem src={imgs[5]} />
+                  : <div className="absolute inset-0" style={{ backgroundColor: project.blocks[1].color }} />
+                }
+              </div>
+              <div className="relative w-full aspect-square">
+                {imgs[6]
+                  ? <MediaItem src={imgs[6]} />
+                  : <div className="absolute inset-0" style={{ backgroundColor: project.blocks[2].color }} />
+                }
+              </div>
+            </div>
+          )}
+          {/* Single 16:9 */}
+          {imgs[7] && (
+            <div className="px-8 md:px-12 xl:px-20 mt-4">
+              <div className="relative w-full aspect-[16/9]">
+                <MediaItem src={imgs[7]} />
+              </div>
+            </div>
+          )}
+          {/* Single 16:9 */}
+          {imgs[8] && (
+            <div className="px-8 md:px-12 xl:px-20 mt-4">
+              <div className="relative w-full aspect-[16/9]">
+                <MediaItem src={imgs[8]} />
+              </div>
+            </div>
+          )}
+          {/* Two-up 1:1 */}
+          {imgs[9] && imgs[10] && (
+            <div className="grid grid-cols-2 gap-4 px-8 md:px-12 xl:px-20 mt-4">
+              {[imgs[9], imgs[10]].map((src, i) => (
                 <div key={i} className="relative w-full aspect-square">
-                  <Image src={src} alt="" fill className="object-cover"
-                    unoptimized={src.endsWith(".gif")} />
+                  <MediaItem src={src} />
                 </div>
               ))}
             </div>
           )}
           {/* Single 16:9 */}
-          {project.images.length > 6 && (
+          {imgs[11] && (
             <div className="px-8 md:px-12 xl:px-20 mt-4">
               <div className="relative w-full aspect-[16/9]">
-                <Image src={project.images[6]} alt="" fill className="object-cover"
-                  unoptimized={project.images[6].endsWith(".gif")} />
-              </div>
-            </div>
-          )}
-          {/* Single 16:9 */}
-          {project.images.length > 7 && (
-            <div className="px-8 md:px-12 xl:px-20 mt-4">
-              <div className="relative w-full aspect-[16/9]">
-                <Image src={project.images[7]} alt="" fill className="object-cover"
-                  unoptimized={project.images[7].endsWith(".gif")} />
+                <MediaItem src={imgs[11]} />
               </div>
             </div>
           )}
           {/* Two-up 1:1 */}
-          {project.images.length > 9 && (
+          {imgs[12] && imgs[13] && (
             <div className="grid grid-cols-2 gap-4 px-8 md:px-12 xl:px-20 mt-4">
-              {project.images.slice(8, 10).map((src, i) => (
+              {[imgs[12], imgs[13]].map((src, i) => (
                 <div key={i} className="relative w-full aspect-square">
-                  <Image src={src} alt="" fill className="object-cover"
-                    unoptimized={src.endsWith(".gif")} />
-                </div>
-              ))}
-            </div>
-          )}
-          {/* Single 16:9 */}
-          {project.images.length > 10 && (
-            <div className="px-8 md:px-12 xl:px-20 mt-4">
-              <div className="relative w-full aspect-[16/9]">
-                <Image src={project.images[10]} alt="" fill className="object-cover"
-                  unoptimized={project.images[10].endsWith(".gif")} />
-              </div>
-            </div>
-          )}
-          {/* Two-up 1:1 */}
-          {project.images.length > 12 && (
-            <div className="grid grid-cols-2 gap-4 px-8 md:px-12 xl:px-20 mt-4">
-              {project.images.slice(11, 13).map((src, i) => (
-                <div key={i} className="relative w-full aspect-square">
-                  <Image src={src} alt="" fill className="object-cover"
-                    unoptimized={src.endsWith(".gif")} />
+                  <MediaItem src={src} />
                 </div>
               ))}
             </div>
@@ -207,7 +241,7 @@ export default async function ProjectPage({ params }: Props) {
         <section className="max-w-[2100px] mx-auto px-8 md:px-12 xl:px-20 py-20 md:py-28">
           <div className="grid md:grid-cols-[240px_1fr] gap-10 md:gap-24">
             <div>
-              <p className="text-[14px] uppercase tracking-widest text-gray-500 sticky top-20">
+              <p className="text-[14px] uppercase tracking-widest text-gray-500">
                 Collaborators
               </p>
             </div>

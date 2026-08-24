@@ -10,7 +10,8 @@
       "Bash(git add *)",
       "Bash(git commit -m 'Update homepage, about page, and project content *)",
       "Bash(git push *)",
-      "Bash(git commit -m 'Update collaborators across all projects *)"
+      "Bash(git commit -m 'Update collaborators across all projects *)",
+      "Bash(git commit -m 'Update nav logo, project page layout, about page copy, and collaborators *)"
     ]
   }
 }

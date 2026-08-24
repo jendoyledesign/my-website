@@ -9,6 +9,7 @@ export type Project = {
   image?: string; // optional thumbnail image (overrides color swatch)
   heroImage?: string; // optional full-bleed hero background image
   heroVideo?: string; // optional full-bleed hero video (takes precedence over heroImage)
+  overview?: string; // optional separate overview text (falls back to challenge)
   heroTagline: string;
   outcomes: [string, string, string];
   challenge: string;
@@ -25,7 +26,7 @@ export const projects: Project[] = [
     client: "Compass Pathways",
     year: "2026",
     industry: "SaaS / Enterprise",
-    services: ["UX Research", "Product Design", "Prototyping"],
+    services: ["UI/UX", "Prototyping", "Art Direction"],
     color: "#e8e4de",
     image: "/work/compass.jpg",
     heroTagline: "From sign-up to aha moment — in half the time.",
@@ -34,20 +35,29 @@ export const projects: Project[] = [
       "62% increase in feature adoption",
       "NPS improved from 28 to 54",
     ],
+    overview:
+      "Compass Pathways is a mental health care biotechnology company that develops synthetic psilocybin therapy for severe psychiatric conditions like treatment-resistant depression. Its primary product, COMP360, pairs a proprietary formulation of psilocybin with psychological support and is evaluated in late-stage clinical trials.",
     challenge:
-      "Compass Pathways' onboarding flow had grown organically over three years, accumulating friction at every step. New users were dropping off before reaching the product's core value — a 6-step setup process that assumed knowledge users didn't yet have. The team knew something was wrong; they didn't know where to begin.",
+      "Compass Pathway's work is groundbreaking — and the new site needed to reflect that: communicating the science behind their products, the rigour of their research, and the deeply personal impact of their therapeutic treatments. The challenge was to design a web presence that not only expressed their new brand identity visually, but carried their mission and vision clearly across a wide range of audiences — patients, clinicians, and investors alike.",
     solution:
-      "We started with two weeks of research — moderated usability sessions, drop-off analysis, and interviews with churned users. The pattern was clear: users weren't failing because the product was bad. They were failing because they couldn't see the value fast enough.\n\nWorking closely with engineering and customer success, we rebuilt the flow around a single question: what's the fastest path to the first meaningful moment? The result was a two-step, context-aware setup that surfaced the right features at the right time — and made it easy to skip what wasn't relevant.",
+      "The result was a platform built to support Compass's new brand identity product launch. We delivered scalable page templates designed to grow with the company, and a flexible design system that drew on a rich palette of colors and patterns to create a distinct web experience. Motion was considered and intentional — masked shapes drift in the direction of the wind, evoking expansion, exploration, and the opening of new pathways. For imagery, we developed a bespoke AI-generated landscape collection to capture the varied journeys patients move through across the course of their treatment.",
     blocks: [
       { color: "#d8d4ce" },
       { color: "#e0dcd6" },
       { color: "#ccc8c2" },
     ],
+    images: [
+      "/compass/compass_1.jpg",
+      "/compass/compass_2.jpg",
+      "/compass/compass_3.jpg",
+      "/compass/compass_4.jpg",
+      "/compass/compass_5.mov",
+      "/compass/compass_6.mov",
+    ],
     collaborators: [
       { role: "Creative Director", name: "Tom Kershaw" },
-      { role: "UX Lead", name: "Jose Ramirez" },
-      { role: "VD Lead", name: "George Schon" },
-      { role: "Senior Designer", name: "Jen Doyle" },
+      { role: "UX", name: "Jose Ramirez" },
+      { role: "VD", name: "George Schon, Jen Doyle" },
     ],
   },
   {
@@ -235,14 +245,21 @@ export const projects: Project[] = [
       "Average session length: 8.4 minutes",
       "Subscription conversion: 22%",
     ],
+    overview:
+      "Brooks Running is a brand built around one simple idea: Run Happy. Their existing website had drifted from that spirit and was leaning too heavily into e-commerce and conversion at the expense of the brand's core identity. Our team at Huge was brought in to transform the Brooks digital experience from a transactional site into something genuinely runner-led: a platform that understood you as a runner, met you where you were, and made you want to come back.",
     challenge:
-      "Brooks Running has been transformed into your personal running partner, expanding the e-commerce experience to be more than just a shopping tool. We injected personality into the new digital experience, distinguishing it from the generic \"big sweat\" competitors.",
+      "A major insight emerged early in discovery was that no two people run the exact same path. Brooks had an opportunity to become a true partner along that journey, but the existing site wasn't reflecting that. The experience was too focused on conversion and had lost the playfulness, warmth, and authenticity that made the brand beloved. The challenge was to bring the design back to a runner truth: more human, more fun, and more connected to the communities Brooks had always championed without abandoning the e-commerce infrastructure already in place.",
     solution:
-      "Habits research guided the entire design approach. We restructured the app around a daily check-in flow that created context, reduced decision fatigue, and rewarded consistency. A personalized recommendation engine surfaced content based on mood and history.\n\nThe visual language shifted too — warmer, more human, less clinical. Illustrations and motion were used to make transitions feel like a breath rather than a page load.",
+      "After months of research and vision work, we got to work reimagining the experience from the ground up. Working hand in hand with Brooks' internal design team across in-person workshops, we empowered the brand expression to live fully within the site through unique interactions, playful design details, and opportunities that celebrated real runners and running communities. We ultimately delivered a complete redesign through bespoke components, page templates, and layouts. The result was a site with genuine personality: highly usable, commercially strong, and unmistakably Brooks.",
     blocks: [
       { color: "#d0d4cc" },
       { color: "#d8dcd4" },
       { color: "#c8ccc4" },
+    ],
+    images: [
+      "/brooks/brooks_1.jpg",
+      "",
+      "/brooks/brooks_2.mov",
     ],
     collaborators: [
       { role: "Creative Director", name: "Rich Bloom, Nour Tabet" },
