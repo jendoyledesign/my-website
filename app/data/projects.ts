@@ -97,10 +97,9 @@ export const projects: Project[] = [
     ],
     collaborators: [
       { role: "Creative Director", name: "Kristin Agnarsdottir" },
-      { role: "UX Lead", name: "James Craig" },
-      { role: "VD Lead", name: "Russel Hinton" },
-      { role: "Senior Designer", name: "Jen Doyle" },
-      { role: "Motion Designer", name: "Carlos Eduardo Mejia Martinez" },
+      { role: "UX", name: "James Craig" },
+      { role: "VD", name: "Russel Hinton, Jen Doyle" },
+      { role: "Motion", name: "Carlos Eduardo Mejia Martinez" },
     ],
   },
   {
