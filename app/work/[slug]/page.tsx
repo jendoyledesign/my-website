@@ -61,14 +61,14 @@ export default async function ProjectPage({ params }: Props) {
   return (
     <div>
       {/* ── Client name ───────────────────────────────────────── */}
-      <div className="max-w-[2100px] mx-auto px-8 md:px-12 xl:px-20 pt-[100px] md:pt-[300px] pb-10 md:pb-14">
+      <div className="max-w-[2100px] mx-auto px-4 md:px-12 xl:px-20 pt-[100px] md:pt-[300px] pb-10 md:pb-14">
         <h1 className="text-5xl md:text-7xl xl:text-8xl font-medium tracking-tight leading-[1.05] max-w-5xl">
           {project.client}
         </h1>
       </div>
 
       {/* ── Three-column description ──────────────────────────── */}
-      <div className="max-w-[2100px] mx-auto px-8 md:px-12 xl:px-20 pb-20 md:pb-28">
+      <div className="max-w-[2100px] mx-auto px-4 md:px-12 xl:px-20 pb-20 md:pb-28">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16">
           <div>
             <p className="text-[14px] uppercase tracking-widest text-gray-500 mb-4">Year</p>
@@ -97,20 +97,20 @@ export default async function ProjectPage({ params }: Props) {
 
       {/* ── Image block 1 — single 16:9 ──────────────────────── */}
       {imgs[0] ? (
-        <div className="px-8 md:px-12 xl:px-20">
+        <div className="px-4 md:px-12 xl:px-20">
           <div className="relative w-full aspect-[16/9]">
             <MediaItem src={imgs[0]} />
           </div>
         </div>
       ) : (
-        <div className="px-8 md:px-12 xl:px-20">
+        <div className="px-4 md:px-12 xl:px-20">
           <div className="w-full aspect-[16/9]"
             style={{ backgroundColor: project.blocks[0].color }} />
         </div>
       )}
 
       {/* ── Challenge ────────────────────────────────────────── */}
-      <section className="max-w-[2100px] mx-auto px-8 md:px-12 xl:px-20 py-20 md:py-28">
+      <section className="max-w-[2100px] mx-auto px-4 md:px-12 xl:px-20 py-20 md:py-28">
         <div className="grid md:grid-cols-[240px_1fr] gap-10 md:gap-24">
           <div>
             <p className="text-[14px] uppercase tracking-widest text-gray-500">
@@ -125,7 +125,7 @@ export default async function ProjectPage({ params }: Props) {
 
       {/* ── Image block 2 — single 16:9 (null=color block, ""=skip, string=image) ── */}
       {imgs[1] !== "" && imgs[1] !== undefined && (
-        <div className="px-8 md:px-12 xl:px-20">
+        <div className="px-4 md:px-12 xl:px-20">
           {imgs[1] ? (
             <div className="relative w-full aspect-[16/9]">
               <MediaItem src={imgs[1]} />
@@ -138,7 +138,7 @@ export default async function ProjectPage({ params }: Props) {
       )}
 
       {/* ── Image block 3 — two-up 1:1 (always renders, per-slot fallback) ── */}
-      <div className="grid grid-cols-2 gap-4 px-8 md:px-12 xl:px-20 mt-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 px-4 md:px-12 xl:px-20 mt-4">
         <div className="relative w-full aspect-square">
           {imgs[2]
             ? <MediaItem src={imgs[2]} />
@@ -154,7 +154,7 @@ export default async function ProjectPage({ params }: Props) {
       </div>
 
       {/* ── Solution ─────────────────────────────────────────── */}
-      <section className="max-w-[2100px] mx-auto px-8 md:px-12 xl:px-20 py-20 md:py-28">
+      <section className="max-w-[2100px] mx-auto px-4 md:px-12 xl:px-20 py-20 md:py-28">
         <div className="grid md:grid-cols-[240px_1fr] gap-10 md:gap-24">
           <div>
             <p className="text-[14px] uppercase tracking-widest text-gray-500">
@@ -173,7 +173,7 @@ export default async function ProjectPage({ params }: Props) {
 
       {/* ── Image block 4 — single (above collaborators) ── */}
       {imgs[4] ? (
-        <div className="px-8 md:px-12 xl:px-20">
+        <div className="px-4 md:px-12 xl:px-20">
           {isVideo(imgs[4]) ? (
             <video
               src={imgs[4]}
@@ -190,7 +190,7 @@ export default async function ProjectPage({ params }: Props) {
           )}
         </div>
       ) : (
-        <div className="px-8 md:px-12 xl:px-20">
+        <div className="px-4 md:px-12 xl:px-20">
           <div className="w-full aspect-[16/9]"
             style={{ backgroundColor: project.blocks[0].color }} />
         </div>
@@ -199,9 +199,9 @@ export default async function ProjectPage({ params }: Props) {
       {/* ── Extra image rows (for projects with extended gallery) */}
       {imgs.length > 5 && (
         <>
-          {/* Two-up 1:1 (per-slot fallback) */}
-          {(imgs[5] || imgs[6]) && (
-            <div className="grid grid-cols-2 gap-4 px-8 md:px-12 xl:px-20 mt-4">
+          {/* Two-up 1:1 (per-slot fallback; null=color block, ""=skip row) */}
+          {(imgs[5] !== "" || imgs[6] !== "") && (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 px-4 md:px-12 xl:px-20 mt-4">
               <div className="relative w-full aspect-square">
                 {imgs[5]
                   ? <MediaItem src={imgs[5]} />
@@ -218,7 +218,7 @@ export default async function ProjectPage({ params }: Props) {
           )}
           {/* Single 16:9 */}
           {imgs[7] && (
-            <div className="px-8 md:px-12 xl:px-20 mt-4">
+            <div className="px-4 md:px-12 xl:px-20 mt-4">
               <div className="relative w-full aspect-[16/9]">
                 <MediaItem src={imgs[7]} />
               </div>
@@ -226,25 +226,32 @@ export default async function ProjectPage({ params }: Props) {
           )}
           {/* Single 16:9 */}
           {imgs[8] && (
-            <div className="px-8 md:px-12 xl:px-20 mt-4">
+            <div className="px-4 md:px-12 xl:px-20 mt-4">
               <div className="relative w-full aspect-[16/9]">
                 <MediaItem src={imgs[8]} />
               </div>
             </div>
           )}
-          {/* Two-up 1:1 */}
-          {imgs[9] && imgs[10] && (
-            <div className="grid grid-cols-2 gap-4 px-8 md:px-12 xl:px-20 mt-4">
-              {[imgs[9], imgs[10]].map((src, i) => (
-                <div key={i} className="relative w-full aspect-square">
-                  <MediaItem src={src} />
-                </div>
-              ))}
+          {/* Two-up 1:1 (per-slot fallback; null=color block, ""=skip row) */}
+          {imgs.length > 9 && (imgs[9] !== "" || imgs[10] !== "") && (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 px-4 md:px-12 xl:px-20 mt-4">
+              <div className="relative w-full aspect-square">
+                {imgs[9]
+                  ? <MediaItem src={imgs[9]} />
+                  : <div className="absolute inset-0" style={{ backgroundColor: project.blocks[1].color }} />
+                }
+              </div>
+              <div className="relative w-full aspect-square">
+                {imgs[10]
+                  ? <MediaItem src={imgs[10]} />
+                  : <div className="absolute inset-0" style={{ backgroundColor: project.blocks[2].color }} />
+                }
+              </div>
             </div>
           )}
           {/* Single 16:9 */}
           {imgs[11] && (
-            <div className="px-8 md:px-12 xl:px-20 mt-4">
+            <div className="px-4 md:px-12 xl:px-20 mt-4">
               <div className="relative w-full aspect-[16/9]">
                 <MediaItem src={imgs[11]} />
               </div>
@@ -252,7 +259,7 @@ export default async function ProjectPage({ params }: Props) {
           )}
           {/* Two-up 1:1 */}
           {imgs[12] && imgs[13] && (
-            <div className="grid grid-cols-2 gap-4 px-8 md:px-12 xl:px-20 mt-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 px-4 md:px-12 xl:px-20 mt-4">
               {[imgs[12], imgs[13]].map((src, i) => (
                 <div key={i} className="relative w-full aspect-square">
                   <MediaItem src={src} />
@@ -262,7 +269,7 @@ export default async function ProjectPage({ params }: Props) {
           )}
           {/* Single 16:9 */}
           {imgs[14] && (
-            <div className="px-8 md:px-12 xl:px-20 mt-4">
+            <div className="px-4 md:px-12 xl:px-20 mt-4">
               <div className="relative w-full aspect-[16/9]">
                 <MediaItem src={imgs[14]} />
               </div>
@@ -273,7 +280,7 @@ export default async function ProjectPage({ params }: Props) {
 
       {/* ── Collaborators ────────────────────────────────────── */}
       {project.collaborators && project.collaborators.length > 0 && (
-        <section className="max-w-[2100px] mx-auto px-8 md:px-12 xl:px-20 py-20 md:py-28">
+        <section className="max-w-[2100px] mx-auto px-4 md:px-12 xl:px-20 py-20 md:py-28">
           <div className="grid md:grid-cols-[240px_1fr] gap-10 md:gap-24">
             <div>
               <p className="text-[14px] uppercase tracking-widest text-gray-500">
@@ -293,7 +300,7 @@ export default async function ProjectPage({ params }: Props) {
 
       {/* ── Project navigation ───────────────────────────────── */}
       <div>
-        <div className="max-w-[2100px] mx-auto px-8 md:px-12 xl:px-20 py-16 md:py-20 flex items-center justify-between gap-8">
+        <div className="max-w-[2100px] mx-auto px-4 md:px-12 xl:px-20 py-16 md:py-20 flex items-center justify-between gap-8">
           {/* Previous */}
           {prev ? (
             <Link href={`/work/${prev.slug}`} className="group">

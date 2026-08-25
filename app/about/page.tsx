@@ -25,7 +25,7 @@ export default function AboutPage() {
     <div className="max-w-[2100px] mx-auto">
       <div className="flex flex-col md:flex-row min-h-[85vh]">
         {/* Left column — text */}
-        <div className="flex-1 px-8 md:px-12 xl:px-20 py-16 flex flex-col justify-center">
+        <div className="flex-1 px-4 md:px-12 xl:px-20 py-16 flex flex-col justify-center">
           <div className="space-y-5 max-w-[650px]">
             <p className="text-lg leading-relaxed">
               Jen Doyle is a Brooklyn-based product designer with over ten
@@ -114,7 +114,7 @@ export default function AboutPage() {
         </div>
 
         {/* Right column — photo */}
-        <div className="md:w-[55%] lg:w-[60%] flex-shrink-0 flex items-start justify-end p-8 md:pt-0 md:pr-12 md:pb-0 md:pl-0 xl:pr-20">
+        <div className="md:w-[55%] lg:w-[60%] flex-shrink-0 flex items-start justify-end px-4 py-8 md:pt-0 md:pr-12 md:pb-0 md:pl-0 xl:pr-20">
           <div className="relative w-full max-w-[700px] aspect-[3/4] md:aspect-auto md:h-[840px]">
             <Image
               src="/about/jen-doyle-profile.jpg"

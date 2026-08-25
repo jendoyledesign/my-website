@@ -49,7 +49,7 @@ export default function Footer() {
 
   return (
     <footer className="mt-24">
-      <div className="max-w-[2100px] mx-auto px-8 md:px-12 xl:px-20 py-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <div className="max-w-[2100px] mx-auto px-4 md:px-12 xl:px-20 py-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <p className="text-sm text-[var(--foreground)]">
           © {year} Jen Doyle. All rights reserved.
         </p>

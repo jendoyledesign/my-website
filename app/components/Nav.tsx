@@ -14,7 +14,7 @@ export default function Nav() {
 
   return (
     <header className="bg-transparent">
-      <nav className="max-w-[2100px] mx-auto px-8 md:px-12 xl:px-20 py-3 flex items-center justify-between">
+      <nav className="max-w-[2100px] mx-auto px-4 md:px-12 xl:px-20 py-3 flex items-center justify-between">
         <Link href="/" className="flex items-center">
           <Image
             src="/about/logo.png"

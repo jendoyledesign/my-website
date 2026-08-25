@@ -127,7 +127,17 @@ export const projects: Project[] = [
       { color: "#ccc5d0" },
     ],
     images: [
-      "/outfront/outfront_1.jpg",
+      "/outfront/outfront_1.jpg", // [0] before challenge
+      null,                        // [1] after challenge
+      null,                        // [2] two-up left
+      null,                        // [3] two-up right
+      null,                        // [4] below solution
+      null,                        // [5] extra two-up left
+      null,                        // [6] extra two-up right
+      "",                           // [7] skip single
+      "",                           // [8] skip single
+      null,                        // [9] second extra two-up left
+      null,                        // [10] second extra two-up right
     ],
     collaborators: [
       { role: "Creative Director", name: "Tom Kershaw" },
@@ -161,7 +171,17 @@ export const projects: Project[] = [
       { color: "#ccc9c4" },
     ],
     images: [
-      "/handstone/hs_1.jpg",
+      "/handstone/hs_1.jpg",       // [0] before challenge
+      null,                          // [1] after challenge
+      null,                          // [2] two-up left
+      null,                          // [3] two-up right
+      null,                          // [4] below solution
+      null,                          // [5] extra two-up left
+      null,                          // [6] extra two-up right
+      "",                             // [7] skip single
+      "",                             // [8] skip single
+      null,                          // [9] second extra two-up left
+      null,                          // [10] second extra two-up right
     ],
     collaborators: [
       { role: "Creative Director", name: "Jessica Cunningham" },

@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="min-h-[calc(100vh-56px)] flex items-center max-w-[2100px] mx-auto px-8 md:px-12 xl:px-20">
+      <section className="min-h-[calc(100vh-56px)] flex items-center max-w-[2100px] mx-auto px-4 md:px-12 xl:px-20">
         <div className="flex flex-col gap-16 max-w-[1000px]">
           <p className="text-4xl md:text-6xl font-normal tracking-tight leading-[1.15]">
             Hello! I&apos;m Jen — a product designer based in Brooklyn, NY with

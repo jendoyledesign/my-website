@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function WorkPage() {
   return (
-    <div className="max-w-[2100px] mx-auto px-8 md:px-12 xl:px-20 pb-12 md:pb-16">
+    <div className="max-w-[2100px] mx-auto px-4 md:px-12 xl:px-20 pb-12 md:pb-16">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.map((project) => (
           <Link
