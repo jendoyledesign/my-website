@@ -32,7 +32,7 @@ export default function Home() {
               href="/work"
               className="inline-flex items-center px-8 h-[60px] bg-[var(--foreground)] text-[var(--background)] text-sm font-medium tracking-widest uppercase hover:opacity-80 transition-opacity"
             >
-              View My Work
+              View Work
             </Link>
           </div>
         </div>

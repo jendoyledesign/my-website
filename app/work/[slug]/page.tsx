@@ -20,15 +20,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-function isGif(src: string | undefined): boolean {
+function isGif(src: string | null | undefined): boolean {
   return src?.endsWith(".gif") ?? false;
 }
 
-function isVideo(src: string | undefined): boolean {
+function isVideo(src: string | null | undefined): boolean {
   return !!(src && (src.endsWith(".mp4") || src.endsWith(".mov") || src.endsWith(".webm")));
 }
 
-function MediaItem({ src, className }: { src: string; className?: string }) {
+function MediaItem({ src, className }: { src: string | null; className?: string }) {
+  if (!src) return null;
   if (isVideo(src)) {
     return (
       <video
@@ -55,20 +56,20 @@ export default async function ProjectPage({ params }: Props) {
   const next = getNextProject(slug);
   const prev = getPreviousProject(slug);
 
-  const imgs = project.images ?? [];
+  const imgs: (string | null | undefined)[] = project.images ?? [];
 
   return (
     <div>
       {/* ── Client name ───────────────────────────────────────── */}
-      <div className="max-w-[2100px] mx-auto px-8 md:px-12 xl:px-20 pt-[300px] pb-10 md:pb-14">
+      <div className="max-w-[2100px] mx-auto px-8 md:px-12 xl:px-20 pt-[100px] md:pt-[300px] pb-10 md:pb-14">
         <h1 className="text-5xl md:text-7xl xl:text-8xl font-medium tracking-tight leading-[1.05] max-w-5xl">
           {project.client}
         </h1>
       </div>
 
       {/* ── Three-column description ──────────────────────────── */}
-      <div className="max-w-[2100px] mx-auto px-8 md:px-12 xl:px-20 pb-20 md:pb-28 border-b border-[var(--border)]">
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-10 md:gap-16">
+      <div className="max-w-[2100px] mx-auto px-8 md:px-12 xl:px-20 pb-20 md:pb-28">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16">
           <div>
             <p className="text-[14px] uppercase tracking-widest text-gray-500 mb-4">Year</p>
             <p className="text-[18px]">{project.year}</p>
@@ -77,9 +78,19 @@ export default async function ProjectPage({ params }: Props) {
             <p className="text-[14px] uppercase tracking-widest text-gray-500 mb-4">Role</p>
             <p className="text-[18px]">{project.services.join(", ")}</p>
           </div>
-          <div className="col-span-2 md:col-span-1">
+          <div>
             <p className="text-[14px] uppercase tracking-widest text-gray-500 mb-4">Overview</p>
             <p className="text-[18px] leading-relaxed">{project.overview ?? project.challenge}</p>
+            {project.siteUrl && (
+              <a
+                href={project.siteUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center mt-4 text-[16px] underline underline-offset-4 hover:opacity-70 transition-opacity"
+              >
+                Visit Site
+              </a>
+            )}
           </div>
         </div>
       </div>
@@ -112,12 +123,17 @@ export default async function ProjectPage({ params }: Props) {
         </div>
       </section>
 
-      {/* ── Image block 2 — single 16:9 (only renders if image present) ── */}
-      {imgs[1] && (
+      {/* ── Image block 2 — single 16:9 (null=color block, ""=skip, string=image) ── */}
+      {imgs[1] !== "" && imgs[1] !== undefined && (
         <div className="px-8 md:px-12 xl:px-20">
-          <div className="relative w-full aspect-[16/9]">
-            <MediaItem src={imgs[1]} />
-          </div>
+          {imgs[1] ? (
+            <div className="relative w-full aspect-[16/9]">
+              <MediaItem src={imgs[1]} />
+            </div>
+          ) : (
+            <div className="w-full aspect-[16/9]"
+              style={{ backgroundColor: project.blocks[0].color }} />
+          )}
         </div>
       )}
 
@@ -155,12 +171,23 @@ export default async function ProjectPage({ params }: Props) {
         </div>
       </section>
 
-      {/* ── Image block 4 — single 16:9 (above collaborators) ── */}
+      {/* ── Image block 4 — single (above collaborators) ── */}
       {imgs[4] ? (
         <div className="px-8 md:px-12 xl:px-20">
-          <div className="relative w-full aspect-[16/9]">
-            <MediaItem src={imgs[4]} />
-          </div>
+          {isVideo(imgs[4]) ? (
+            <video
+              src={imgs[4]}
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-auto"
+            />
+          ) : (
+            <div className="relative w-full aspect-[16/9]">
+              <MediaItem src={imgs[4]} />
+            </div>
+          )}
         </div>
       ) : (
         <div className="px-8 md:px-12 xl:px-20">
@@ -233,6 +260,14 @@ export default async function ProjectPage({ params }: Props) {
               ))}
             </div>
           )}
+          {/* Single 16:9 */}
+          {imgs[14] && (
+            <div className="px-8 md:px-12 xl:px-20 mt-4">
+              <div className="relative w-full aspect-[16/9]">
+                <MediaItem src={imgs[14]} />
+              </div>
+            </div>
+          )}
         </>
       )}
 
@@ -257,7 +292,7 @@ export default async function ProjectPage({ params }: Props) {
       )}
 
       {/* ── Project navigation ───────────────────────────────── */}
-      <div className="border-t border-[var(--border)]">
+      <div>
         <div className="max-w-[2100px] mx-auto px-8 md:px-12 xl:px-20 py-16 md:py-20 flex items-center justify-between gap-8">
           {/* Previous */}
           {prev ? (

@@ -22,7 +22,7 @@ const speaking = [
 
 export default function AboutPage() {
   return (
-    <div className="max-w-[2100px] mx-auto pt-28">
+    <div className="max-w-[2100px] mx-auto">
       <div className="flex flex-col md:flex-row min-h-[85vh]">
         {/* Left column — text */}
         <div className="flex-1 px-8 md:px-12 xl:px-20 py-16 flex flex-col justify-center">

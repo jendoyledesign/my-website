@@ -10,12 +10,13 @@ export type Project = {
   heroImage?: string; // optional full-bleed hero background image
   heroVideo?: string; // optional full-bleed hero video (takes precedence over heroImage)
   overview?: string; // optional separate overview text (falls back to challenge)
+  siteUrl?: string; // optional live site URL shown as "Visit site" link
   heroTagline: string;
   outcomes: [string, string, string];
   challenge: string;
   solution: string;
   blocks: { color: string }[]; // image/media placeholder blocks
-  images?: string[]; // optional case study image gallery
+  images?: (string | null)[]; // optional case study image gallery; null = color block, "" = skip slot
   collaborators?: { role: string; name: string }[];
 };
 
@@ -35,6 +36,7 @@ export const projects: Project[] = [
       "62% increase in feature adoption",
       "NPS improved from 28 to 54",
     ],
+    siteUrl: "https://www.compasspathways.com",
     overview:
       "Compass Pathways is a mental health care biotechnology company that develops synthetic psilocybin therapy for severe psychiatric conditions like treatment-resistant depression. Its primary product, COMP360, pairs a proprietary formulation of psilocybin with psychological support and is evaluated in late-stage clinical trials.",
     challenge:
@@ -70,6 +72,7 @@ export const projects: Project[] = [
     services: ["Design Systems", "Component Library", "Documentation"],
     color: "#dde4e0",
     image: "/work/nespresso.jpg",
+    siteUrl: "https://www.nespresso.com/us/en/explore-vertuo-technology",
     heroTagline: "One system. Twelve teams. Zero guesswork.",
     outcomes: [
       "200+ components shipped",
@@ -80,6 +83,13 @@ export const projects: Project[] = [
       "Nespresso had grown quickly through acquisition, inheriting four different design languages across their product suite. Teams were rebuilding the same components independently, inconsistencies were eroding brand trust, and new designers spent weeks just orienting themselves to how things worked.",
     solution:
       "The engagement started with a thorough audit: cataloguing every component in use, mapping where systems overlapped, and identifying what needed standardization versus what should stay flexible.\n\nFrom that foundation, we built a living design system — a single source of truth in Figma, paired with a React component library. Every decision was documented with rationale, usage guidelines, and accessibility specs. We ran working sessions with each product team to ensure adoption wasn't mandated but earned.",
+    images: [
+      "/nespresso/nespresso_1.jpg",
+      null,
+      "",
+      "",
+      "/nespresso/nespresso_5.mov",
+    ],
     blocks: [
       { color: "#cdd4d0" },
       { color: "#d5dcd8" },
@@ -132,6 +142,7 @@ export const projects: Project[] = [
     services: ["UX Design", "Conversion Optimization", "A/B Testing"],
     color: "#e4e1dc",
     image: "/work/hand-and-stone.jpg",
+    siteUrl: "https://www.handandstone.com",
     heroTagline: "Six steps became two. Conversion followed.",
     outcomes: [
       "18% lift in completed purchases",
@@ -151,6 +162,92 @@ export const projects: Project[] = [
       { role: "Creative Director", name: "Jessica Cunningham" },
       { role: "UX", name: "Tracy Michael, Priyanka Saha, Mikalai Andreyanau" },
       { role: "VD", name: "Keith Locke, Jen Doyle" },
+    ],
+  },
+  {
+    slug: "brooks-running",
+    title: "Consumer app for a wellness brand",
+    client: "Brooks Running",
+    year: "2020",
+    industry: "Health & Wellness / Consumer",
+    services: ["Mobile Design", "Product Design", "Prototyping"],
+    color: "#e0e4dc",
+    image: "/work/brooks.jpg",
+    siteUrl: "https://www.brooksrunning.com",
+    heroTagline: "Building a daily habit that actually sticks.",
+    outcomes: [
+      "Day-7 retention: 61%",
+      "Average session length: 8.4 minutes",
+      "Subscription conversion: 22%",
+    ],
+    overview:
+      "Brooks Running is a brand built around one simple idea: Run Happy. Their existing website had drifted from that spirit and was leaning too heavily into e-commerce and conversion at the expense of the brand's core identity. Our team at Huge was brought in to transform the Brooks digital experience from a transactional site into something genuinely runner-led: a platform that understood you as a runner, met you where you were, and made you want to come back.",
+    challenge:
+      "A major insight emerged early in discovery was that no two people run the exact same path. Brooks had an opportunity to become a true partner along that journey, but the existing site wasn't reflecting that. The experience was too focused on conversion and had lost the playfulness, warmth, and authenticity that made the brand beloved. The challenge was to bring the design back to a runner truth: more human, more fun, and more connected to the communities Brooks had always championed without abandoning the e-commerce infrastructure already in place.",
+    solution:
+      "After months of research and vision work, we got to work reimagining the experience from the ground up. Working hand in hand with Brooks' internal design team across in-person workshops, we empowered the brand expression to live fully within the site through unique interactions, playful design details, and opportunities that celebrated real runners and running communities. We ultimately delivered a complete redesign through bespoke components, page templates, and layouts. The result was a site with genuine personality: highly usable, commercially strong, and unmistakably Brooks.",
+    blocks: [
+      { color: "#d0d4cc" },
+      { color: "#d8dcd4" },
+      { color: "#c8ccc4" },
+    ],
+    images: [
+      "/brooks/brooks_1.jpg",
+      null,
+      "/brooks/brooks_2.mov",
+      null,
+      "/brooks/brooks_4.jpg",
+      "/brooks/brooks_5.jpg",
+      "/brooks/brooks_3.mov",
+    ],
+    collaborators: [
+      { role: "Creative Director", name: "Rich Bloom, Nour Tabet" },
+      { role: "UX Lead", name: "Alex Safchuk" },
+      { role: "VD Lead", name: "Irina Moiseenko" },
+      { role: "Senior Designer", name: "Jen Doyle, Rene Arvizu" },
+      { role: "Designer", name: "Chris Sullivan" },
+    ],
+  },
+  {
+    slug: "mms",
+    title: "Website redesign for a creative agency",
+    client: "M&M's",
+    year: "2022",
+    industry: "Creative Agency",
+    services: ["Web Design", "Art Direction", "Branding"],
+    color: "#e4dce0",
+    image: "/work/mms.jpg",
+    siteUrl: "https://www.mms.com",
+    heroTagline: "A portfolio that earns the work it shows.",
+    overview:
+      "M&M's is one of the most recognizable confectionery brands in the world — beloved across generations for its color, character, and playfulness. With JKR's refresh of their brand identity, we were tasked with reimagining the M&M's digital presence in a way that honored the brand's iconic heritage while bringing the new identity into the e-commerce site while giving it the energy and expression it needed to connect with a new generation of fans.",
+    outcomes: [
+      "Inbound inquiries up 55%",
+      "Average session duration: +2.1 minutes",
+      "Featured on Awwwards",
+    ],
+    challenge:
+      "M&M'S, a leading brand in the Mars Wrigley confectionery portfolio, was tasked with doubling its revenue and adding 30M+ intimate relationships to their D2C consumer portfolio. We set out to deliver a modernized e-commerce experience to the brand's largest DTC channel, imbuing new brand purpose into a historically transactional touchpoint while developing the beacon for both the digital and physical brand ecosystem.",
+    solution:
+      "We took a human-centered, brand-focused approach to reimagining their digital experience. Focusing on gift giving which accounted for 90% of site sales, we unlocked and converted new market segments to develop repeat, lifetime customer value. Through in-depth research across three countries, in-store analysis of digital to physical touchpoints, and targeted business and content strategy, our experience enabled M&M'S to show up as champions of fun and connection, building brand strength, loyalty, and equity.\n\nOur customer experience deepened relationships with customers, shifting focus from past product lines to how they create connections. The streamlined e-commerce experience targeted the lucrative gen-z market by showing up authentically with brand purpose, action, and credibility. This website also served as the design standard of product and purpose for in-store digital gifting experience and the in-store personalized product kiosk.",
+    blocks: [
+      { color: "#d4ccd0" },
+      { color: "#dcd4d8" },
+      { color: "#c4bcc0" },
+    ],
+    images: [
+      "/mms/mms_1.jpg",
+      "/mms/mms_2.jpg",
+      "/mms/mms_3.png",
+      "/mms/mms_4.jpg",
+      "/mms/mms_5.jpg",
+      "/mms/mms_6.jpg",
+      "/mms/mms_7.jpg",
+    ],
+    collaborators: [
+      { role: "Creative Director", name: "Nour Tabet" },
+      { role: "UX", name: "Jackie Littman" },
+      { role: "VD", name: "Jen Doyle" },
     ],
   },
   {
@@ -178,12 +275,15 @@ export const projects: Project[] = [
       { color: "#bccacc" },
     ],
     images: [
-      "/1kx/1kx-logo.webp",
-      "/1kx/1kx-colors.webp",
-      "/1kx/1kx-made-in-house.webp",
-      "/1kx/1kx-profile.webp",
-      "/1kx/1kx-team.webp",
-      "/1kx/1kx-writing.webp",
+      "/1kx/1kx_1.jpg", // single before challenge
+      "/1kx/1kx_2.jpg", // single after challenge
+      "/1kx/1kx_3.jpg", // two-up left
+      "/1kx/1kx_4.jpg", // two-up right
+      "/1kx/1kx_5.jpg", // single below solution
+      "",               // skip extra two-up left
+      "",               // skip extra two-up right
+      "/1kx/1kx_6.jpg", // single
+      "/1kx/1kx_7.jpg", // single
     ],
   },
   {
@@ -192,7 +292,7 @@ export const projects: Project[] = [
     client: "ContraryCon",
     year: "2017",
     industry: "Creative / Events",
-    services: ["Event Branding", "Print Design", "Art Direction"],
+    services: ["Branding", "Web Design", "Art Direction", "Interaction/Motion"],
     color: "#e8e0de",
     image: "/work/contrary-con.jpg",
     heroTagline: "Challenging participants to see the world through a different lens.",
@@ -216,7 +316,7 @@ export const projects: Project[] = [
       { role: "Interactive Designer", name: "Jen Doyle" },
     ],
     images: [
-      "/contrary-con/cc_14.jpg",
+      "/contrary-con/cc_1.jpg",
       "/contrary-con/cc_2.webp",
       "/contrary-con/cc_3.webp",
       "/contrary-con/cc_4.webp",
@@ -229,75 +329,6 @@ export const projects: Project[] = [
       "/contrary-con/cc_11.jpg",
       "/contrary-con/cc_12.jpg",
       "/contrary-con/cc_13.jpg",
-    ],
-  },
-  {
-    slug: "brooks-running",
-    title: "Consumer app for a wellness brand",
-    client: "Brooks Running",
-    year: "2020",
-    industry: "Health & Wellness / Consumer",
-    services: ["Mobile Design", "Product Design", "Prototyping"],
-    color: "#e0e4dc",
-    image: "/work/brooks.jpg",
-    heroTagline: "Building a daily habit that actually sticks.",
-    outcomes: [
-      "Day-7 retention: 61%",
-      "Average session length: 8.4 minutes",
-      "Subscription conversion: 22%",
-    ],
-    overview:
-      "Brooks Running is a brand built around one simple idea: Run Happy. Their existing website had drifted from that spirit and was leaning too heavily into e-commerce and conversion at the expense of the brand's core identity. Our team at Huge was brought in to transform the Brooks digital experience from a transactional site into something genuinely runner-led: a platform that understood you as a runner, met you where you were, and made you want to come back.",
-    challenge:
-      "A major insight emerged early in discovery was that no two people run the exact same path. Brooks had an opportunity to become a true partner along that journey, but the existing site wasn't reflecting that. The experience was too focused on conversion and had lost the playfulness, warmth, and authenticity that made the brand beloved. The challenge was to bring the design back to a runner truth: more human, more fun, and more connected to the communities Brooks had always championed without abandoning the e-commerce infrastructure already in place.",
-    solution:
-      "After months of research and vision work, we got to work reimagining the experience from the ground up. Working hand in hand with Brooks' internal design team across in-person workshops, we empowered the brand expression to live fully within the site through unique interactions, playful design details, and opportunities that celebrated real runners and running communities. We ultimately delivered a complete redesign through bespoke components, page templates, and layouts. The result was a site with genuine personality: highly usable, commercially strong, and unmistakably Brooks.",
-    blocks: [
-      { color: "#d0d4cc" },
-      { color: "#d8dcd4" },
-      { color: "#c8ccc4" },
-    ],
-    images: [
-      "/brooks/brooks_1.jpg",
-      "",
-      "/brooks/brooks_2.mov",
-    ],
-    collaborators: [
-      { role: "Creative Director", name: "Rich Bloom, Nour Tabet" },
-      { role: "UX Lead", name: "Alex Safchuk" },
-      { role: "VD Lead", name: "Irina Moiseenko" },
-      { role: "Senior Designer", name: "Jen Doyle, Rene Arvizu" },
-      { role: "Designer", name: "Chris Sullivan" },
-    ],
-  },
-  {
-    slug: "mms",
-    title: "Website redesign for a creative agency",
-    client: "M&M's",
-    year: "2022",
-    industry: "Creative Agency",
-    services: ["Web Design", "Art Direction", "Branding"],
-    color: "#e4dce0",
-    image: "/work/mms.jpg",
-    heroTagline: "A portfolio that earns the work it shows.",
-    outcomes: [
-      "Inbound inquiries up 55%",
-      "Average session duration: +2.1 minutes",
-      "Featured on Awwwards",
-    ],
-    challenge:
-      "Bureau Studio's existing site was four years old and had been outpaced by their own work. The portfolio showed ambitious, craft-forward projects on a template that felt generic. New business was coming in through referrals — not the site. They wanted the digital presence to start pulling its weight.",
-    solution:
-      "We led with editorial art direction — treating each case study as a magazine spread rather than a slide deck. The grid was designed to flex between project types, giving photography-led work room to breathe while letting type-heavy projects command attention.\n\nNavigation was stripped down to the essentials. Loading was instant. Every interaction was designed to get out of the way of the work.",
-    blocks: [
-      { color: "#d4ccd0" },
-      { color: "#dcd4d8" },
-      { color: "#c4bcc0" },
-    ],
-    collaborators: [
-      { role: "Creative Director", name: "Nour Tabet" },
-      { role: "UX", name: "Jackie Littman" },
-      { role: "VD", name: "Jen Doyle" },
     ],
   },
   {
