@@ -126,6 +126,9 @@ export const projects: Project[] = [
       { color: "#dcd5e0" },
       { color: "#ccc5d0" },
     ],
+    images: [
+      "/outfront/outfront_1.jpg",
+    ],
     collaborators: [
       { role: "Creative Director", name: "Tom Kershaw" },
       { role: "UX", name: "Darin Spicer & Joar Heiberg" },
@@ -156,6 +159,9 @@ export const projects: Project[] = [
       { color: "#d4d1cc" },
       { color: "#dcd9d4" },
       { color: "#ccc9c4" },
+    ],
+    images: [
+      "/handstone/hs_1.jpg",
     ],
     collaborators: [
       { role: "Creative Director", name: "Jessica Cunningham" },

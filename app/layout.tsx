@@ -18,7 +18,7 @@ const gtWalsheim = localFont({
 
 export const metadata: Metadata = {
   title: {
-    default: "Jen Doyle — Designer",
+    default: "Jen Doyle",
     template: "%s — Jen Doyle",
   },
   description:
