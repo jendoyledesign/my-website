@@ -53,6 +53,7 @@ export const projects: Project[] = [
       "/compass/compass_4.jpg",
       "/compass/compass_5.mov",
       "/compass/compass_6.mov",
+      "/compass/compass_7.mp4",
     ],
     collaborators: [
       { role: "Creative Director", name: "Tom Kershaw" },
