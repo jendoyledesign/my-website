@@ -1,13 +1,13 @@
 "use client";
 
 import { useState, Suspense } from "react";
-import { useSearchParams, useRouter } from "next/navigation";
+import { useSearchParams } from "next/navigation";
+
 function PasswordForm() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
   const searchParams = useSearchParams();
-  const router = useRouter();
   const from = searchParams.get("from") || "/";
 
   async function handleSubmit(e: React.FormEvent) {
@@ -15,15 +15,21 @@ function PasswordForm() {
     setLoading(true);
     setError(false);
 
-    const res = await fetch("/api/auth", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ password }),
-    });
+    try {
+      const res = await fetch("/api/auth", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ password }),
+      });
 
-    if (res.ok) {
-      router.push(from);
-    } else {
+      if (res.ok) {
+        // Full page reload so middleware sees the new cookie
+        window.location.href = from;
+      } else {
+        setError(true);
+        setLoading(false);
+      }
+    } catch {
       setError(true);
       setLoading(false);
     }
@@ -32,7 +38,6 @@ function PasswordForm() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-8">
       <div className="w-full max-w-sm flex flex-col items-center gap-10">
-        {/* Form */}
         <form onSubmit={handleSubmit} className="w-full flex flex-col gap-4">
           <input
             type="password"
