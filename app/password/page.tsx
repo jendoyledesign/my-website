@@ -2,8 +2,6 @@
 
 import { useState, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
-import Image from "next/image";
-
 function PasswordForm() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
@@ -34,16 +32,6 @@ function PasswordForm() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-8">
       <div className="w-full max-w-sm flex flex-col items-center gap-10">
-        {/* Logo */}
-        <Image
-          src="/about/logo.png"
-          alt="Jen Doyle"
-          width={120}
-          height={32}
-          className="h-16 w-auto"
-          priority
-        />
-
         {/* Form */}
         <form onSubmit={handleSubmit} className="w-full flex flex-col gap-4">
           <input
