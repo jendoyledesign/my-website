@@ -218,7 +218,7 @@ export const projects: Project[] = [
       "Subscription conversion: 22%",
     ],
     overview:
-      "Brooks Running is a brand built around one simple idea: Run Happy. Their existing website had drifted from that spirit and was leaning too heavily into e-commerce and conversion at the expense of the brand's core identity. Our team at Huge was brought in to transform the Brooks digital experience from a transactional site into something genuinely runner-led: a platform that understood you as a runner, met you where you were, and made you want to come back.",
+      "Brooks Running is a brand built around one simple idea: Run Happy. Their existing website had drifted from that spirit and was leaning too heavily into e-commerce and conversion at the expense of the brand's core identity. Our goal was to transform the Brooks digital experience from a transactional site into a fully runner-led platform.",
     challenge:
       "A major insight emerged early in discovery was that no two people run the exact same path. Brooks had an opportunity to become a true partner along that journey, but the existing site wasn't reflecting that. The experience was too focused on conversion and had lost the playfulness, warmth, and authenticity that made the brand beloved. The challenge was to bring the design back to a runner truth: more human, more fun, and more connected to the communities Brooks had always championed without abandoning the e-commerce infrastructure already in place.",
     solution:
@@ -248,7 +248,7 @@ export const projects: Project[] = [
   {
     slug: "mms",
     title: "Website redesign for a creative agency",
-    client: "M&M's",
+    client: "M&M'S",
     year: "2022",
     industry: "Creative Agency",
     services: ["Product Design", "UI/UX", "Motion", "Design Systems"],
@@ -257,7 +257,7 @@ export const projects: Project[] = [
     siteUrl: "https://www.mms.com",
     heroTagline: "A portfolio that earns the work it shows.",
     overview:
-      "M&M's is one of the most recognizable confectionery brands in the world — beloved across generations for its color, character, and playfulness. With JKR's refresh of their brand identity, we were tasked with reimagining the M&M's digital presence in a way that honored the brand's iconic heritage while bringing the new identity into the e-commerce site while giving it the energy and expression it needed to connect with a new generation of fans.",
+      "M&M'S is one of the most recognizable confectionery brands in the world — beloved across generations for its color, character, and playfulness. With JKR's refresh of their brand identity, we were tasked with reimagining the M&M'S digital presence in a way that honored the brand's iconic heritage while bringing the new identity into the e-commerce site while giving it the energy and expression it needed to connect with a new generation of fans.",
     outcomes: [
       "Inbound inquiries up 55%",
       "Average session duration: +2.1 minutes",

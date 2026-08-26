@@ -86,7 +86,7 @@ export default async function ProjectPage({ params }: Props) {
                 href={project.siteUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center mt-4 text-[16px] underline underline-offset-4 hover:opacity-70 transition-opacity"
+                className="inline-flex items-center mt-4 text-[18px] underline underline-offset-4 hover:opacity-70 transition-opacity"
               >
                 Visit Site
               </a>
@@ -117,7 +117,7 @@ export default async function ProjectPage({ params }: Props) {
               Challenge
             </p>
           </div>
-          <p className="text-[20px] leading-relaxed max-w-3xl">
+          <p className="text-[18px] leading-relaxed max-w-3xl">
             {project.challenge}
           </p>
         </div>
@@ -163,7 +163,7 @@ export default async function ProjectPage({ params }: Props) {
           </div>
           <div className="space-y-6 max-w-3xl">
             {project.solution.split("\n\n").map((para, i) => (
-              <p key={i} className="text-[20px] leading-relaxed">
+              <p key={i} className="text-[18px] leading-relaxed">
                 {para}
               </p>
             ))}
@@ -297,7 +297,7 @@ export default async function ProjectPage({ params }: Props) {
             </div>
             <div className="space-y-3">
               {project.collaborators.map(({ role, name }) => (
-                <p key={name} className="text-[16px] leading-snug">
+                <p key={name} className="text-[18px] leading-snug">
                   <span className="text-[var(--muted)]">{role}:</span> {name}
                 </p>
               ))}
