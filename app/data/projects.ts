@@ -27,7 +27,7 @@ export const projects: Project[] = [
     client: "Compass Pathways",
     year: "2026",
     industry: "SaaS / Enterprise",
-    services: ["UI/UX", "Prototyping", "Art Direction"],
+    services: ["Web Design", "Motion", "Art Direction", "Design Systems"],
     color: "#e8e4de",
     image: "/work/compass.jpg",
     heroTagline: "From sign-up to aha moment — in half the time.",
@@ -69,7 +69,7 @@ export const projects: Project[] = [
     client: "Nespresso",
     year: "2026",
     industry: "Creative / Technology",
-    services: ["Design Systems", "Component Library", "Documentation"],
+    services: ["Product Design", "UI/UX", "Motion"],
     color: "#dde4e0",
     image: "/work/nespresso.jpg",
     siteUrl: "https://www.nespresso.com/us/en/explore-vertuo-technology",
@@ -79,16 +79,24 @@ export const projects: Project[] = [
       "12 product teams aligned",
       "Design-to-dev handoff time cut by 35%",
     ],
+    overview:
+      "Nespresso is an iconic brand of single-serve coffee and espresso system created by Nestlé.",
     challenge:
       "Nespresso had grown quickly through acquisition, inheriting four different design languages across their product suite. Teams were rebuilding the same components independently, inconsistencies were eroding brand trust, and new designers spent weeks just orienting themselves to how things worked.",
     solution:
       "The engagement started with a thorough audit: cataloguing every component in use, mapping where systems overlapped, and identifying what needed standardization versus what should stay flexible.\n\nFrom that foundation, we built a living design system — a single source of truth in Figma, paired with a React component library. Every decision was documented with rationale, usage guidelines, and accessibility specs. We ran working sessions with each product team to ensure adoption wasn't mandated but earned.",
     images: [
-      "/nespresso/nespresso_1.jpg",
-      null,
-      "",
-      "",
-      "/nespresso/nespresso_5.mov",
+      "/nespresso/nespresso_1.jpg", // [0] single before challenge
+      null,                          // [1] single after challenge (color block)
+      "",                            // [2] skip two-up left
+      "",                            // [3] skip two-up right
+      "/nespresso/nespresso_5.mov", // [4] below solution
+      "",                            // [5] skip extra two-up left
+      "",                            // [6] skip extra two-up right
+      null,                          // [7] full width single (color block)
+      "",                            // [8] skip
+      null,                          // [9] double left (color block)
+      null,                          // [10] double right (color block)
     ],
     blocks: [
       { color: "#cdd4d0" },
@@ -108,7 +116,7 @@ export const projects: Project[] = [
     client: "Outfront",
     year: "2026",
     industry: "Climate / Consumer",
-    services: ["Product Strategy", "Mobile Design", "UX Research"],
+    services: ["Product Design", "UI/UX", "Motion", "Art Direction", "Design Systems"],
     color: "#e4dde8",
     image: "/work/outfront.jpg",
     heroTagline: "Making sustainability feel less like homework.",
@@ -117,6 +125,8 @@ export const projects: Project[] = [
       "4.7★ App Store rating at launch",
       "28% day-30 retention",
     ],
+    overview:
+      "OUTFRONT is a major outdoor advertising company that specializes in out-of-home (OOH) and In Real Life (IRL) media.",
     challenge:
       "GreenPath wanted to help everyday consumers understand and reduce their carbon footprint — but the category was crowded with guilt-driven, data-heavy apps that users opened once and forgot. The challenge wasn't just design; it was defining what a sustainable habit actually looks like in someone's daily life.",
     solution:
@@ -151,7 +161,7 @@ export const projects: Project[] = [
     client: "Hand & Stone",
     year: "2025",
     industry: "E-commerce / Retail",
-    services: ["UX Design", "Conversion Optimization", "A/B Testing"],
+    services: ["Product Design", "UI/UX", "Motion", "Art Direction", "Design Systems"],
     color: "#e4e1dc",
     image: "/work/hand-and-stone.jpg",
     siteUrl: "https://www.handandstone.com",
@@ -161,6 +171,8 @@ export const projects: Project[] = [
       "Cart abandonment down 24%",
       "Average checkout time: 47s → 22s",
     ],
+    overview:
+      "Hand and Stone is a popular franchise chain of massage and facial spas with over 600 locations across the United States and Canada.",
     challenge:
       "Marketplace Co's checkout flow had been patched together over years of feature requests and compliance additions. What should have been a 90-second transaction had become a 6-screen gauntlet — with a 68% abandonment rate to prove it. Mobile was particularly brutal.",
     solution:
@@ -195,7 +207,7 @@ export const projects: Project[] = [
     client: "Brooks Running",
     year: "2020",
     industry: "Health & Wellness / Consumer",
-    services: ["Mobile Design", "Product Design", "Prototyping"],
+    services: ["Product Design", "UI/UX", "Motion", "Design Systems"],
     color: "#e0e4dc",
     image: "/work/brooks.jpg",
     siteUrl: "https://www.brooksrunning.com",
@@ -210,7 +222,7 @@ export const projects: Project[] = [
     challenge:
       "A major insight emerged early in discovery was that no two people run the exact same path. Brooks had an opportunity to become a true partner along that journey, but the existing site wasn't reflecting that. The experience was too focused on conversion and had lost the playfulness, warmth, and authenticity that made the brand beloved. The challenge was to bring the design back to a runner truth: more human, more fun, and more connected to the communities Brooks had always championed without abandoning the e-commerce infrastructure already in place.",
     solution:
-      "After months of research and vision work, we got to work reimagining the experience from the ground up. Working hand in hand with Brooks' internal design team across in-person workshops, we empowered the brand expression to live fully within the site through unique interactions, playful design details, and opportunities that celebrated real runners and running communities. We ultimately delivered a complete redesign through bespoke components, page templates, and layouts. The result was a site with genuine personality: highly usable, commercially strong, and unmistakably Brooks.",
+      "After months of research and vision work, we reimagined the experience from the ground up. Working hand in hand with Brooks' internal design team across in-person workshops, we empowered the brand expression to live fully within the site through unique interactions, playful design details, and opportunities that celebrated real runners and their communities. We ultimately delivered a complete redesign through bespoke components, page templates, and layouts. The result was a runner centered site with genuine personality that was unmistakably Brooks.",
     blocks: [
       { color: "#d0d4cc" },
       { color: "#d8dcd4" },
@@ -239,7 +251,7 @@ export const projects: Project[] = [
     client: "M&M's",
     year: "2022",
     industry: "Creative Agency",
-    services: ["Web Design", "Art Direction", "Branding"],
+    services: ["Product Design", "UI/UX", "Motion", "Design Systems"],
     color: "#e4dce0",
     image: "/work/mms.jpg",
     siteUrl: "https://www.mms.com",
@@ -254,7 +266,7 @@ export const projects: Project[] = [
     challenge:
       "M&M'S, a leading brand in the Mars Wrigley confectionery portfolio, was tasked with doubling its revenue and adding 30M+ intimate relationships to their D2C consumer portfolio. We set out to deliver a modernized e-commerce experience to the brand's largest DTC channel, imbuing new brand purpose into a historically transactional touchpoint while developing the beacon for both the digital and physical brand ecosystem.",
     solution:
-      "We took a human-centered, brand-focused approach to reimagining their digital experience. Focusing on gift giving which accounted for 90% of site sales, we unlocked and converted new market segments to develop repeat, lifetime customer value. Through in-depth research across three countries, in-store analysis of digital to physical touchpoints, and targeted business and content strategy, our experience enabled M&M'S to show up as champions of fun and connection, building brand strength, loyalty, and equity.\n\nOur customer experience deepened relationships with customers, shifting focus from past product lines to how they create connections. The streamlined e-commerce experience targeted the lucrative gen-z market by showing up authentically with brand purpose, action, and credibility. This website also served as the design standard of product and purpose for in-store digital gifting experience and the in-store personalized product kiosk.",
+      "We took a human-centered, brand-focused approach to reimagining the digital experience. With gifting driving 90% of site sales, we focused on unlocking new audiences and building long-term customer value through research across three countries, in-store analysis, and targeted content strategy. The result was a streamlined e-commerce experience that positioned M&M'S as a champion of fun and connection while building brand strength and loyalty. The site also established the design foundation for in-store digital gifting and personalized product experiences.",
     blocks: [
       { color: "#d4ccd0" },
       { color: "#dcd4d8" },
@@ -290,10 +302,12 @@ export const projects: Project[] = [
       "Brand guidelines faithfully translated to web",
       "Fully responsive across all devices",
     ],
+    overview:
+      "1kx is a global, research-driven venture capital firm specializing in early-stage investments across blockchain, Web3, and tokenized networks.",
     challenge:
-      "1kx is a venture capital firm focused on blockchain technology. I was tasked to build out a new website using their brand guidelines.",
+      "1kx needed a website that expressed their new brand identity with confidence — one that felt distinctly professional without losing the approachability and playfulness that set them apart from traditional venture capital.",
     solution:
-      "Working within an established visual identity, the focus was on translating 1kx's brand guidelines into a web experience that felt considered and precise.\n\nEvery decision — typography scale, spacing, color application — was made in service of the existing brand rather than layering on something new. The result is a site that feels like a natural extension of who 1kx is.",
+      "We built a site that gave 1kx's new brand identity a confident digital home. The experience was designed to serve two distinct audiences: investors seeking credibility, and founders and builders looking for a firm they could genuinely connect with. By surfacing 1kx's editorial blog, the site positions the firm as a thought leader with both the track record and the perspective to back it up.",
     blocks: [
       { color: "#ccd4d4" },
       { color: "#d4dcdc" },
@@ -317,7 +331,7 @@ export const projects: Project[] = [
     client: "ContraryCon",
     year: "2017",
     industry: "Creative / Events",
-    services: ["Branding", "Web Design", "Art Direction", "Interaction/Motion"],
+    services: ["Branding", "Web Design", "Motion"],
     color: "#e8e0de",
     image: "/work/contrary-con.jpg",
     heroTagline: "Challenging participants to see the world through a different lens.",
@@ -326,10 +340,12 @@ export const projects: Project[] = [
       "Print collateral delivered for day-of experience",
       "Annual conference identity established",
     ],
+    overview:
+      "An annual (anti)conference with a singular goal: to introduce the DC creative community to new ideas, perspectives, and ways of thinking. This one-day event brings together speakers from a range of industries across the city, encouraging participants to see their work—and the world around them—through a different lens.",
     challenge:
-      "An annual (anti)conference with one goal: expose the DC creative community to new ideas and perspectives. This one-day series of speakers and workshops, explores a world beyond ones and zeroes, challenging participants to see the world through a different lens.",
+      "The event needed a digital experience that felt as unconventional and exploratory as the conference itself. The challenge was to create a visual language that could capture the energy and diversity of DC's creative community while making discovery and experimentation central to the experience.",
     solution:
-      "The design needed to feel like the conference itself — unexpected, tactile, and a little analog in a sea of digital-first events.\n\nPrint collateral, signage, and event materials were designed to create a cohesive experience from invitation through the day itself, giving ContraryCon a visual identity that matched the spirit of the programming.",
+      "We created an interactive microsite built around playful vignettes, experimental typography, and unexpected moments of interaction. These explorations became the foundation of the event's visual identity, creating an unconventional and expressive style that felt distinctly its own. Paired with an engaging lineup of speakers, the experience created a platform for new ideas while celebrating the city's diverse creative talent and perspective.",
     blocks: [
       { color: "#d8d0ce" },
       { color: "#e0d8d6" },
@@ -362,7 +378,7 @@ export const projects: Project[] = [
     client: "Auberge Resorts",
     year: "2019",
     industry: "Cultural / Public",
-    services: ["Wayfinding", "Graphic Design", "Environmental Design"],
+    services: ["Web Design", "UI/UX", "Motion", "Branding"],
     color: "#dde0e8",
     image: "/work/auberge.jpg",
     heroTagline: "Helping visitors find the work — then lose themselves in it.",
@@ -371,6 +387,8 @@ export const projects: Project[] = [
       "System implemented across 3 buildings",
       "Winner, SEGD Award for Wayfinding Excellence",
     ],
+    overview:
+      "Auberge Collection is a luxury hospitality company that manages independent upscale hotels, resorts, residences, and private clubs.",
     challenge:
       "City Arts had expanded across three connected buildings over a decade, and the signage had expanded with it — inconsistently, incrementally, and confusingly. Visitor surveys flagged navigation as the number-one frustration. Staff spent significant time giving directions. The signage had become noise.",
     solution:
@@ -379,6 +397,15 @@ export const projects: Project[] = [
       { color: "#cdd0d8" },
       { color: "#d5d8e0" },
       { color: "#c5c8d0" },
+    ],
+    images: [
+      null, // [0] single before challenge (color block)
+      null, // [1] single below challenge (color block)
+      null, // [2] two-up left (color block)
+      null, // [3] two-up right (color block)
+      null, // [4] single below solution (color block)
+      null, // [5] double left (color block)
+      null, // [6] double right (color block)
     ],
     collaborators: [
       { role: "Creative Director", name: "Patrick Greene" },

@@ -216,20 +216,28 @@ export default async function ProjectPage({ params }: Props) {
               </div>
             </div>
           )}
-          {/* Single 16:9 */}
-          {imgs[7] && (
+          {/* Single 16:9 (null=color block, ""=skip) */}
+          {imgs[7] !== "" && imgs[7] !== undefined && (
             <div className="px-4 md:px-12 xl:px-20 mt-4">
-              <div className="relative w-full aspect-[16/9]">
-                <MediaItem src={imgs[7]} />
-              </div>
+              {imgs[7] ? (
+                <div className="relative w-full aspect-[16/9]">
+                  <MediaItem src={imgs[7]} />
+                </div>
+              ) : (
+                <div className="w-full aspect-[16/9]" style={{ backgroundColor: project.blocks[0].color }} />
+              )}
             </div>
           )}
-          {/* Single 16:9 */}
-          {imgs[8] && (
+          {/* Single 16:9 (null=color block, ""=skip) */}
+          {imgs[8] !== "" && imgs[8] !== undefined && (
             <div className="px-4 md:px-12 xl:px-20 mt-4">
-              <div className="relative w-full aspect-[16/9]">
-                <MediaItem src={imgs[8]} />
-              </div>
+              {imgs[8] ? (
+                <div className="relative w-full aspect-[16/9]">
+                  <MediaItem src={imgs[8]} />
+                </div>
+              ) : (
+                <div className="w-full aspect-[16/9]" style={{ backgroundColor: project.blocks[0].color }} />
+              )}
             </div>
           )}
           {/* Two-up 1:1 (per-slot fallback; null=color block, ""=skip row) */}
