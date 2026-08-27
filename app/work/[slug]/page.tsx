@@ -283,6 +283,34 @@ export default async function ProjectPage({ params }: Props) {
               </div>
             </div>
           )}
+          {/* Two-up 1:1 */}
+          {imgs[15] && imgs[16] && (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 px-4 md:px-12 xl:px-20 mt-4">
+              {[imgs[15], imgs[16]].map((src, i) => (
+                <div key={i} className="relative w-full aspect-square">
+                  <MediaItem src={src} />
+                </div>
+              ))}
+            </div>
+          )}
+          {/* Single 16:9 */}
+          {imgs[17] && (
+            <div className="px-4 md:px-12 xl:px-20 mt-4">
+              <div className="relative w-full aspect-[16/9]">
+                <MediaItem src={imgs[17]} />
+              </div>
+            </div>
+          )}
+          {/* Two-up 1:1 */}
+          {imgs[18] && imgs[19] && (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 px-4 md:px-12 xl:px-20 mt-4">
+              {[imgs[18], imgs[19]].map((src, i) => (
+                <div key={i} className="relative w-full aspect-square">
+                  <MediaItem src={src} />
+                </div>
+              ))}
+            </div>
+          )}
         </>
       )}
 

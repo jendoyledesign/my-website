@@ -87,15 +87,15 @@ export const projects: Project[] = [
       "The engagement started with a thorough audit: cataloguing every component in use, mapping where systems overlapped, and identifying what needed standardization versus what should stay flexible.\n\nFrom that foundation, we built a living design system — a single source of truth in Figma, paired with a React component library. Every decision was documented with rationale, usage guidelines, and accessibility specs. We ran working sessions with each product team to ensure adoption wasn't mandated but earned.",
     images: [
       "/nespresso/nespresso_1.jpg", // [0] single before challenge
-      null,                          // [1] single after challenge (color block)
+      "/nespresso/nespresso_2.webm", // [1] single after challenge
       "",                            // [2] skip two-up left
       "",                            // [3] skip two-up right
       "/nespresso/nespresso_5.mov", // [4] below solution
       "",                            // [5] skip extra two-up left
       "",                            // [6] skip extra two-up right
-      null,                          // [7] full width single (color block)
+      "",                            // [7] skip
       "",                            // [8] skip
-      null,                          // [9] double left (color block)
+      "/nespresso/nespresso_3.webm", // [9] double left
       null,                          // [10] double right (color block)
     ],
     blocks: [
@@ -230,12 +230,13 @@ export const projects: Project[] = [
     ],
     images: [
       "/brooks/brooks_1.jpg",
-      null,
+      "/brooks/brooks_7.png",
       "/brooks/brooks_2.mov",
-      null,
+      "/brooks/brooks_8.mp4",
       "/brooks/brooks_4.jpg",
       "/brooks/brooks_5.jpg",
-      "/brooks/brooks_3.mov",
+      "/brooks/brooks_3.mp4",
+      "/brooks/brooks_6.mp4",
     ],
     collaborators: [
       { role: "Creative Director", name: "Rich Bloom, Nour Tabet" },
@@ -273,18 +274,113 @@ export const projects: Project[] = [
       { color: "#c4bcc0" },
     ],
     images: [
-      "/mms/mms_1.jpg",
-      "/mms/mms_2.jpg",
-      "/mms/mms_3.png",
-      "/mms/mms_4.jpg",
-      "/mms/mms_5.jpg",
-      "/mms/mms_6.jpg",
-      "/mms/mms_7.jpg",
+      "/mms/mms_1.jpg",   // [0] single before challenge
+      "/mms/mms_2.jpg",   // [1] single after challenge
+      "/mms/mms_3.png",   // [2] two-up left
+      "/mms/mms_4.jpg",   // [3] two-up right
+      "/mms/mms_8.webm",  // [4] right below solution
+      "/mms/mms_6.jpg",   // [5] two-up left
+      "/mms/mms_7.jpg",   // [6] two-up right
+      "/mms/mms_5.jpg",   // [7] single
     ],
     collaborators: [
       { role: "Creative Director", name: "Nour Tabet" },
       { role: "UX", name: "Jackie Littman" },
       { role: "VD", name: "Jen Doyle" },
+    ],
+  },
+  {
+    slug: "schneider-electric",
+    title: "Wayfinding system for a cultural institution",
+    client: "Schneider Electric",
+    year: "2024",
+    industry: "Energy / Technology",
+    services: ["Branding", "Logo", "UI/UX", "Motion"],
+    color: "#dde0e8",
+    image: "/work/se.jpg",
+    heroTagline: "Helping visitors find the work — then lose themselves in it.",
+    outcomes: [
+      "Wayfinding complaints reduced by 78%",
+      "System implemented across 3 buildings",
+      "Winner, SEGD Award for Wayfinding Excellence",
+    ],
+    overview:
+      "Schneider Electric provides energy technology, combining energy management, industrial automation, and digital software to make power safe, efficient, and sustainable.",
+    challenge:
+      "City Arts had expanded across three connected buildings over a decade, and the signage had expanded with it — inconsistently, incrementally, and confusingly. Visitor surveys flagged navigation as the number-one frustration. Staff spent significant time giving directions. The signage had become noise.",
+    solution:
+      "We started by walking the space as visitors — without staff guidance, without a map. Every point of confusion was documented, every missed turn noted. From that audit came a hierarchy: primary navigation (buildings, floors), secondary navigation (galleries, amenities), and tertiary identifiers (room names, accessibility features).\n\nThe visual system was designed to complement City Arts' existing identity — using their type family and color palette — while introducing clear size and placement rules that made decisions automatic. Materials were specified for longevity and ease of replacement.",
+    blocks: [
+      { color: "#cdd0d8" },
+      { color: "#d5d8e0" },
+      { color: "#c5c8d0" },
+    ],
+    images: [
+      "/se/se_1.jpg",  // [0] single before challenge
+      "/se/se_3.webm", // [1] single after challenge
+      null,            // [2] two-up left (color block)
+      null,            // [3] two-up right (color block)
+      "/se/se_4.webm", // [4] single below solution
+      null,            // [5] double left (color block)
+      null,            // [6] double right (color block)
+    ],
+    collaborators: [
+      { role: "Creative Director", name: "Jude Gay" },
+      { role: "UX", name: "Yolanda Lam" },
+      { role: "VD", name: "Jen Doyle" },
+    ],
+  },
+  {
+    slug: "contrarycon",
+    title: "Brand and event design for a DC creative conference",
+    client: "ContraryCon",
+    year: "2017",
+    industry: "Creative / Events",
+    services: ["Branding", "Merch", "Print", "Web Design", "Motion"],
+    color: "#e8e0de",
+    image: "/work/contrary-con.jpg",
+    heroTagline: "Challenging participants to see the world through a different lens.",
+    outcomes: [
+      "Full event brand system designed and produced",
+      "Print collateral delivered for day-of experience",
+      "Annual conference identity established",
+    ],
+    overview:
+      "An annual (anti)conference with a singular goal: to introduce the DC creative community to new ideas, perspectives, and ways of thinking. This one-day event brings together speakers from a range of industries across the city, encouraging participants to see their work and the world around them through a different lens.",
+    challenge:
+      "The event needed a digital experience that felt as unconventional and exploratory as the conference itself. The challenge was to create a visual language that could capture the energy and diversity of DC's creative community while making discovery and experimentation central to the experience.",
+    solution:
+      "We created an interactive microsite built around playful vignettes, experimental typography, and unexpected moments of interaction. These explorations became the foundation of the event's visual identity, creating an unconventional and expressive style that felt distinctly its own. Paired with an engaging lineup of speakers, the experience created a platform for new ideas while celebrating the city's diverse creative talent and perspective.",
+    blocks: [
+      { color: "#d8d0ce" },
+      { color: "#e0d8d6" },
+      { color: "#c8c0be" },
+    ],
+    collaborators: [
+      { role: "Creative Director", name: "Campbell Kwaka, Fernando Castro" },
+      { role: "Design", name: "Dan Rader, Jen Doyle" },
+    ],
+    images: [
+      "/contrary-con/cc_1.jpg",   // [0] single before challenge
+      "/contrary-con/cc_2.webp",  // [1] single after challenge
+      "/contrary-con/cc_3.webp",  // [2] two-up left
+      "/contrary-con/cc_4.webp",  // [3] two-up right
+      "/contrary-con/cc_5.webp",  // [4] single below solution
+      "/contrary-con/cc_6.webp",  // [5] two-up left
+      "/contrary-con/cc_7.gif",   // [6] two-up right
+      "/contrary-con/cc_8.jpg",   // [7] single
+      "",                          // [8] skip single
+      "/contrary-con/cc_15.gif",  // [9] two-up left — right below cc_8
+      "/contrary-con/cc_16.gif",  // [10] two-up right
+      "/contrary-con/cc_9.jpg",   // [11] single
+      "/contrary-con/cc_10.jpg",  // [12] two-up left
+      "/contrary-con/cc_11.jpg",  // [13] two-up right
+      "/contrary-con/cc_14.jpg",  // [14] single
+      "/contrary-con/cc_17.jpg",  // [15] two-up left — right under cc_14
+      "/contrary-con/cc_18.jpg",  // [16] two-up right — right under cc_14
+      "/contrary-con/cc_19.jpg",  // [17] single
+      "/contrary-con/cc_12.jpg",  // [18] two-up left
+      "/contrary-con/cc_13.jpg",  // [19] two-up right
     ],
   },
   {
@@ -314,104 +410,14 @@ export const projects: Project[] = [
       { color: "#bccacc" },
     ],
     images: [
-      "/1kx/1kx_1.jpg", // single before challenge
-      "/1kx/1kx_2.jpg", // single after challenge
-      "/1kx/1kx_3.jpg", // two-up left
-      "/1kx/1kx_4.jpg", // two-up right
-      "/1kx/1kx_5.jpg", // single below solution
-      "",               // skip extra two-up left
-      "",               // skip extra two-up right
-      "/1kx/1kx_6.jpg", // single
-      "/1kx/1kx_7.jpg", // single
-    ],
-  },
-  {
-    slug: "contrarycon",
-    title: "Brand and event design for a DC creative conference",
-    client: "ContraryCon",
-    year: "2017",
-    industry: "Creative / Events",
-    services: ["Branding", "Web Design", "Motion"],
-    color: "#e8e0de",
-    image: "/work/contrary-con.jpg",
-    heroTagline: "Challenging participants to see the world through a different lens.",
-    outcomes: [
-      "Full event brand system designed and produced",
-      "Print collateral delivered for day-of experience",
-      "Annual conference identity established",
-    ],
-    overview:
-      "An annual (anti)conference with a singular goal: to introduce the DC creative community to new ideas, perspectives, and ways of thinking. This one-day event brings together speakers from a range of industries across the city, encouraging participants to see their work—and the world around them—through a different lens.",
-    challenge:
-      "The event needed a digital experience that felt as unconventional and exploratory as the conference itself. The challenge was to create a visual language that could capture the energy and diversity of DC's creative community while making discovery and experimentation central to the experience.",
-    solution:
-      "We created an interactive microsite built around playful vignettes, experimental typography, and unexpected moments of interaction. These explorations became the foundation of the event's visual identity, creating an unconventional and expressive style that felt distinctly its own. Paired with an engaging lineup of speakers, the experience created a platform for new ideas while celebrating the city's diverse creative talent and perspective.",
-    blocks: [
-      { color: "#d8d0ce" },
-      { color: "#e0d8d6" },
-      { color: "#c8c0be" },
-    ],
-    collaborators: [
-      { role: "Creative Director", name: "Campbell Kwaka, Fernando Castro" },
-      { role: "Sr Interactive Designer", name: "Dan Rader" },
-      { role: "Interactive Designer", name: "Jen Doyle" },
-    ],
-    images: [
-      "/contrary-con/cc_1.jpg",
-      "/contrary-con/cc_2.webp",
-      "/contrary-con/cc_3.webp",
-      "/contrary-con/cc_4.webp",
-      "/contrary-con/cc_5.webp",
-      "/contrary-con/cc_6.webp",
-      "/contrary-con/cc_7.gif",
-      "/contrary-con/cc_8.jpg",
-      "/contrary-con/cc_9.jpg",
-      "/contrary-con/cc_10.jpg",
-      "/contrary-con/cc_11.jpg",
-      "/contrary-con/cc_12.jpg",
-      "/contrary-con/cc_13.jpg",
-    ],
-  },
-  {
-    slug: "auberge-resorts",
-    title: "Wayfinding system for a cultural institution",
-    client: "Auberge Resorts",
-    year: "2019",
-    industry: "Cultural / Public",
-    services: ["Web Design", "UI/UX", "Motion", "Branding"],
-    color: "#dde0e8",
-    image: "/work/auberge.jpg",
-    heroTagline: "Helping visitors find the work — then lose themselves in it.",
-    outcomes: [
-      "Wayfinding complaints reduced by 78%",
-      "System implemented across 3 buildings",
-      "Winner, SEGD Award for Wayfinding Excellence",
-    ],
-    overview:
-      "Auberge Collection is a luxury hospitality company that manages independent upscale hotels, resorts, residences, and private clubs.",
-    challenge:
-      "City Arts had expanded across three connected buildings over a decade, and the signage had expanded with it — inconsistently, incrementally, and confusingly. Visitor surveys flagged navigation as the number-one frustration. Staff spent significant time giving directions. The signage had become noise.",
-    solution:
-      "We started by walking the space as visitors — without staff guidance, without a map. Every point of confusion was documented, every missed turn noted. From that audit came a hierarchy: primary navigation (buildings, floors), secondary navigation (galleries, amenities), and tertiary identifiers (room names, accessibility features).\n\nThe visual system was designed to complement City Arts' existing identity — using their type family and color palette — while introducing clear size and placement rules that made decisions automatic. Materials were specified for longevity and ease of replacement.",
-    blocks: [
-      { color: "#cdd0d8" },
-      { color: "#d5d8e0" },
-      { color: "#c5c8d0" },
-    ],
-    images: [
-      null, // [0] single before challenge (color block)
-      null, // [1] single below challenge (color block)
-      null, // [2] two-up left (color block)
-      null, // [3] two-up right (color block)
-      null, // [4] single below solution (color block)
-      null, // [5] double left (color block)
-      null, // [6] double right (color block)
-    ],
-    collaborators: [
-      { role: "Creative Director", name: "Patrick Greene" },
-      { role: "Environmental Designer", name: "Jen Doyle" },
-      { role: "Graphic Designer", name: "Amy Cho" },
-      { role: "Fabrication Lead", name: "Mark Ellis" },
+      "/1kx/1kx_1.jpg", // [0] single before challenge
+      "/1kx/1kx_2.jpg", // [1] single after challenge
+      "/1kx/1kx_3.jpg", // [2] two-up left
+      "/1kx/1kx_4.jpg", // [3] two-up right
+      "",               // [4] skip below solution
+      "/1kx/1kx_5.jpg", // [5] two-up left (side by side)
+      "/1kx/1kx_6.jpg", // [6] two-up right (side by side)
+      "/1kx/1kx_7.jpg", // [7] single
     ],
   },
 ];

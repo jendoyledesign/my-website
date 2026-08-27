@@ -12,7 +12,8 @@
       "Bash(git push *)",
       "Bash(git commit -m 'Update collaborators across all projects *)",
       "Bash(git commit -m 'Update nav logo, project page layout, about page copy, and collaborators *)",
-      "Bash(git commit -m 'Update copy, roles, and overviews across all projects *)"
+      "Bash(git commit -m 'Update copy, roles, and overviews across all projects *)",
+      "Bash(git commit -m 'Update projects: copy, images, roles, reordering, Schneider Electric *)"
     ]
   }
 }
